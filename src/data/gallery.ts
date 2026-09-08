@@ -4,7 +4,7 @@ export const galleryItems: GalleryItem[] = [
   {
     title: "Sunrise over the Mara",
     image:
-      "https://images.unsplash.com/photo-1547036967-23d11aacaee0?auto=format&fit=crop&w=1200&q=80",
+      "https://images.unsplash.com/photo-1546182990-dffeafbe841d?auto=format&fit=crop&w=1200&q=80",
     alt: "Safari landscape at sunrise in the Maasai Mara",
     category: "Landscape",
     caption: "A slow dawn across the golden plains.",

@@ -21,15 +21,15 @@ export function StorySection() {
           </div>
         </div>
 
-        <div className="mt-12 grid gap-6 md:grid-cols-2 xl:grid-cols-4">
+        <div className="mt-14 grid gap-0 border-y border-white/15 md:grid-cols-2 xl:grid-cols-4">
           {[
             ["Personal itineraries", "Every journey is designed around how you want to feel, move, and experience the destination."],
             ["Local knowledge", "Our planning is grounded in a detailed understanding of the landscapes, seasons, and hidden rhythms of the region."],
             ["Thoughtful service", "Seamless logistics and attentive guidance make the experience feel effortless and elevated."],
             ["Memorable moments", "From sunrise game drives to cultural encounters, every day is shaped around what matters most."],
-          ].map(([title, text]) => (
-            <div key={title} className="rounded-[1.6rem] border border-white/10 bg-white/5 p-6">
-              <div className="mb-4 text-[0.7rem] font-medium uppercase tracking-[0.22em] text-[var(--color-gold)]">{title}</div>
+          ].map(([title, text], index) => (
+            <div key={title} className="border-b border-white/15 p-5 last:border-b-0 md:[&:nth-child(odd)]:border-r xl:border-b-0 xl:border-r xl:last:border-r-0 xl:p-7">
+              <div className="mb-5 flex items-center gap-3 text-[0.7rem] font-medium uppercase tracking-[0.22em] text-[var(--color-gold)]"><span className="font-serif text-2xl">0{index + 1}</span><span>{title}</span></div>
               <p className="text-base leading-7 text-white/70">{text}</p>
             </div>
           ))}

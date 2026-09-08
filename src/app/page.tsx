@@ -4,7 +4,6 @@ import { FeaturedSafaris } from "@/components/home/featured-safaris";
 import { DestinationsPreview } from "@/components/home/destinations-preview";
 import { ExperiencesGrid } from "@/components/home/experiences-grid";
 import { StorySection } from "@/components/home/story-section";
-import { VisualBreak } from "@/components/home/visual-break";
 import { GalleryPreview } from "@/components/home/gallery-preview";
 import { Testimonials } from "@/components/home/testimonials";
 import { JournalPreview } from "@/components/home/journal-preview";
@@ -19,7 +18,6 @@ export default function HomePage() {
       <DestinationsPreview />
       <ExperiencesGrid />
       <StorySection />
-      <VisualBreak />
       <GalleryPreview />
       <Testimonials />
       <JournalPreview />

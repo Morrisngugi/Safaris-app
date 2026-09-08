@@ -9,7 +9,7 @@ export const destinations: Destination[] = [
     description:
       "Set across the rolling grasslands of southwestern Kenya, the Maasai Mara is where the wild feels cinematic. Guests enjoy sunrise game drives, luxury tented camps, and the unforgettable rhythm of the Great Migration.",
     image:
-      "https://images.unsplash.com/photo-1547036967-23d11aacaee0?auto=format&fit=crop&w=1200&q=80",
+      "https://images.unsplash.com/photo-1546182990-dffeafbe841d?auto=format&fit=crop&w=1200&q=80",
     accents: ["Great Migration", "Big Cats", "Luxury Camps"],
     bestTime: "July to October",
     highlights: ["Hot air balloon safari", "Big five tracking", "Mara River crossings"],

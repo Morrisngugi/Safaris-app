@@ -28,12 +28,13 @@ export function DestinationsPreview() {
             >
               <div className="relative h-[500px]">
                 <Image src={destination.image} alt={destination.name} fill sizes="(max-width: 768px) 100vw, (max-width: 1280px) 50vw, 25vw" className="object-cover transition duration-500 group-hover:scale-105" />
-                <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(15,12,9,0.18),rgba(15,12,9,0.72))]" />
+                <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(15,12,9,0.18),rgba(15,12,9,0.72))] transition duration-500 group-hover:bg-[linear-gradient(180deg,rgba(15,12,9,0.28),rgba(15,12,9,0.84))]" />
               </div>
-              <div className="absolute inset-x-0 bottom-0 p-6 text-white">
+              <div className="absolute inset-x-0 bottom-0 p-6 text-white transition-transform duration-500 group-hover:-translate-y-2">
                 <div className="text-[0.62rem] uppercase tracking-[0.24em] text-white/75">{destination.region}</div>
                 <h3 className="mt-3 font-serif text-4xl leading-none text-white">{destination.name}</h3>
                 <p className="mt-3 text-sm leading-6 text-white/75">{destination.summary}</p>
+                <span className="mt-4 inline-flex items-center gap-2 text-sm text-[var(--color-gold)]">Explore {destination.name} <ArrowRight size={15} className="transition-transform group-hover:translate-x-1" /></span>
               </div>
             </Link>
           ))}

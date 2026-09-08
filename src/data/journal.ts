@@ -6,7 +6,7 @@ export const journalArticles: JournalArticle[] = [
     title: "Best Time to Visit the Maasai Mara",
     excerpt: "A guide to the seasons, migration timing, and the safari atmosphere that fits your travel style.",
     image:
-      "https://images.unsplash.com/photo-1547036967-23d11aacaee0?auto=format&fit=crop&w=1200&q=80",
+      "https://images.unsplash.com/photo-1546182990-dffeafbe841d?auto=format&fit=crop&w=1200&q=80",
     category: "Safari Guide",
     publishedAt: "May 18, 2026",
     readTime: "4 min read",
