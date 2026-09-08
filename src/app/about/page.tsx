@@ -9,10 +9,10 @@ export default function AboutPage() {
         <div className="mx-auto grid max-w-[1400px] gap-10 px-4 py-28 sm:px-6 lg:grid-cols-[1.1fr_0.9fr] lg:px-8 lg:py-32">
           <div className="flex flex-col justify-center">
             <div className="mb-4 text-[0.7rem] font-medium uppercase tracking-[0.28em] text-[var(--color-gold)]">About us</div>
-            <h1 className="font-serif text-5xl leading-none sm:text-7xl">A more thoughtful way to travel Africa.</h1>
+            <h1 className="font-serif text-[clamp(2.5rem,10vw,4.5rem)] leading-none sm:text-7xl">A more thoughtful way to travel Africa.</h1>
           </div>
           <div className="relative h-[420px] overflow-hidden rounded-[2rem] border border-white/10">
-            <Image src="https://images.unsplash.com/photo-1547036967-23d11aacaee0?auto=format&fit=crop&w=1200&q=80" alt="Safari landscape" fill className="object-cover" />
+            <Image src="https://images.unsplash.com/photo-1547036967-23d11aacaee0?auto=format&fit=crop&w=1200&q=80" alt="Safari landscape" fill sizes="(max-width: 1024px) 100vw, 40vw" priority loading="eager" className="object-cover" />
           </div>
         </div>
       </section>

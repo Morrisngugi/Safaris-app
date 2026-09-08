@@ -25,7 +25,7 @@ export default async function JournalDetailPage({ params }: { params: Promise<{ 
           </Link>
           <div className="max-w-4xl">
             <div className="mb-4 text-[0.7rem] font-medium uppercase tracking-[0.28em] text-[var(--color-gold)]">{article.category}</div>
-            <h1 className="font-serif text-5xl leading-none sm:text-7xl">{article.title}</h1>
+            <h1 className="font-serif text-[clamp(2.5rem,10vw,4.5rem)] leading-none sm:text-7xl">{article.title}</h1>
             <div className="mt-6 flex flex-wrap items-center gap-4 text-sm text-white/70">
               <span>{article.publishedAt}</span>
               <span>•</span>
@@ -38,7 +38,7 @@ export default async function JournalDetailPage({ params }: { params: Promise<{ 
       <section className="mx-auto max-w-[1200px] px-4 py-16 sm:px-6 lg:px-8">
         <div className="overflow-hidden rounded-[2rem] border border-[var(--color-border)] bg-white shadow-[0_18px_52px_rgba(24,18,12,0.04)]">
           <div className="relative h-[520px]">
-            <Image src={article.image} alt={article.title} fill className="object-cover" />
+            <Image src={article.image} alt={article.title} fill sizes="(max-width: 1024px) 100vw, 1200px" priority loading="eager" className="object-cover" />
           </div>
         </div>
 

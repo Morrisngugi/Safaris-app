@@ -21,7 +21,7 @@ export function ExperiencesGrid() {
           {experiences.slice(0, 6).map((experience) => (
             <article key={experience.slug} className="group overflow-hidden rounded-[1.8rem] border border-[var(--color-border)] bg-white">
               <div className="relative h-64 overflow-hidden">
-                <Image src={experience.image} alt={experience.title} fill className="object-cover transition duration-500 group-hover:scale-105" />
+                <Image src={experience.image} alt={experience.title} fill sizes="(max-width: 768px) 100vw, (max-width: 1280px) 50vw, 33vw" className="object-cover transition duration-500 group-hover:scale-105" />
               </div>
               <div className="space-y-4 p-6">
                 <h3 className="font-serif text-3xl leading-none text-[var(--color-charcoal)]">{experience.title}</h3>

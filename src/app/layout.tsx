@@ -46,7 +46,7 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
       <body className="min-h-full bg-[var(--color-ivory)] text-[var(--color-charcoal)]">
         <div className="flex min-h-screen flex-col">
           <SiteHeader />
-          <div className="flex-1 pt-20">{children}</div>
+          <div className="flex-1">{children}</div>
           <SiteFooter />
           <WhatsAppFab />
         </div>

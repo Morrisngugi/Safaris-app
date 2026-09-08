@@ -8,7 +8,7 @@ export default function ContactPage() {
         <div className="mx-auto max-w-[1400px] px-4 py-28 sm:px-6 lg:px-8 lg:py-32">
           <div className="max-w-3xl">
             <div className="mb-4 text-[0.7rem] font-medium uppercase tracking-[0.28em] text-[var(--color-gold)]">Contact</div>
-            <h1 className="font-serif text-5xl leading-none sm:text-7xl">Let’s craft your next itinerary.</h1>
+            <h1 className="font-serif text-[clamp(2.5rem,10vw,4.5rem)] leading-none sm:text-7xl">Let’s craft your next itinerary.</h1>
           </div>
         </div>
       </section>
@@ -33,27 +33,27 @@ export default function ContactPage() {
             <div className="grid gap-6 md:grid-cols-2">
               <label className="space-y-2 text-sm text-[var(--color-muted)]">
                 <span>Full name</span>
-                <input className="w-full rounded-xl border border-[var(--color-border)] bg-[var(--color-ivory)] px-4 py-3 text-[var(--color-charcoal)] outline-none transition focus:border-[var(--color-gold)]" placeholder="Your name" />
+                <input type="text" autoComplete="name" className="min-h-11 w-full rounded-xl border border-[var(--color-border)] bg-[var(--color-ivory)] px-4 py-3 text-[var(--color-charcoal)] outline-none transition focus:border-[var(--color-gold)]" placeholder="Your name" />
               </label>
               <label className="space-y-2 text-sm text-[var(--color-muted)]">
                 <span>Email</span>
-                <input type="email" className="w-full rounded-xl border border-[var(--color-border)] bg-[var(--color-ivory)] px-4 py-3 text-[var(--color-charcoal)] outline-none transition focus:border-[var(--color-gold)]" placeholder="you@example.com" />
+                <input type="email" autoComplete="email" className="min-h-11 w-full rounded-xl border border-[var(--color-border)] bg-[var(--color-ivory)] px-4 py-3 text-[var(--color-charcoal)] outline-none transition focus:border-[var(--color-gold)]" placeholder="you@example.com" />
               </label>
               <label className="space-y-2 text-sm text-[var(--color-muted)]">
                 <span>Phone</span>
-                <input className="w-full rounded-xl border border-[var(--color-border)] bg-[var(--color-ivory)] px-4 py-3 text-[var(--color-charcoal)] outline-none transition focus:border-[var(--color-gold)]" placeholder="+254 ..." />
+                <input type="tel" autoComplete="tel" className="min-h-11 w-full rounded-xl border border-[var(--color-border)] bg-[var(--color-ivory)] px-4 py-3 text-[var(--color-charcoal)] outline-none transition focus:border-[var(--color-gold)]" placeholder="+254 ..." />
               </label>
               <label className="space-y-2 text-sm text-[var(--color-muted)]">
                 <span>Country</span>
-                <input className="w-full rounded-xl border border-[var(--color-border)] bg-[var(--color-ivory)] px-4 py-3 text-[var(--color-charcoal)] outline-none transition focus:border-[var(--color-gold)]" placeholder="Country" />
+                <input type="text" autoComplete="country-name" className="min-h-11 w-full rounded-xl border border-[var(--color-border)] bg-[var(--color-ivory)] px-4 py-3 text-[var(--color-charcoal)] outline-none transition focus:border-[var(--color-gold)]" placeholder="Country" />
               </label>
               <label className="space-y-2 text-sm text-[var(--color-muted)] md:col-span-2">
                 <span>Destinations of interest</span>
-                <input className="w-full rounded-xl border border-[var(--color-border)] bg-[var(--color-ivory)] px-4 py-3 text-[var(--color-charcoal)] outline-none transition focus:border-[var(--color-gold)]" placeholder="Masai Mara, Zanzibar, Serengeti..." />
+                <input type="text" className="min-h-11 w-full rounded-xl border border-[var(--color-border)] bg-[var(--color-ivory)] px-4 py-3 text-[var(--color-charcoal)] outline-none transition focus:border-[var(--color-gold)]" placeholder="Masai Mara, Zanzibar, Serengeti..." />
               </label>
               <label className="space-y-2 text-sm text-[var(--color-muted)] md:col-span-2">
                 <span>Message</span>
-                <textarea rows={5} className="w-full rounded-xl border border-[var(--color-border)] bg-[var(--color-ivory)] px-4 py-3 text-[var(--color-charcoal)] outline-none transition focus:border-[var(--color-gold)]" placeholder="Tell us about your ideal trip..." />
+                <textarea rows={5} className="min-h-32 w-full rounded-xl border border-[var(--color-border)] bg-[var(--color-ivory)] px-4 py-3 text-[var(--color-charcoal)] outline-none transition focus:border-[var(--color-gold)]" placeholder="Tell us about your ideal trip..." />
               </label>
             </div>
             <button type="submit" className="mt-6 inline-flex items-center justify-center rounded-full bg-[var(--color-gold)] px-6 py-3 text-sm font-medium text-[#1d1a17] transition hover:bg-[#c89d4f]">

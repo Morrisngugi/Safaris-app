@@ -12,6 +12,7 @@ export function BrandIntro() {
               src="https://images.unsplash.com/photo-1516426122078-c23e76319801?auto=format&fit=crop&w=1200&q=80"
               alt="Elephants in an African landscape"
               fill
+              sizes="(max-width: 1024px) 100vw, 50vw"
               className="object-cover"
             />
           </div>

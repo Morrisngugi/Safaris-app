@@ -8,6 +8,7 @@ export function VisualBreak() {
           src="https://images.unsplash.com/photo-1546182990-dffeafbe841d?auto=format&fit=crop&w=1800&q=80"
           alt="Wildlife in the African wilderness"
           fill
+          sizes="100vw"
           className="object-cover"
         />
         <div className="absolute inset-0 bg-[linear-gradient(90deg,rgba(12,10,8,0.58),rgba(12,10,8,0.18),rgba(12,10,8,0.50))]" />

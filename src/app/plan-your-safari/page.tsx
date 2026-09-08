@@ -39,7 +39,7 @@ export default function PlanYourSafariPage() {
         <div className="mx-auto max-w-[1400px] px-4 py-28 sm:px-6 lg:px-8 lg:py-32">
           <div className="max-w-3xl">
             <div className="mb-4 text-[0.7rem] font-medium uppercase tracking-[0.28em] text-[var(--color-gold)]">Plan your safari</div>
-            <h1 className="font-serif text-5xl leading-none sm:text-7xl">Tell us what kind of African journey you want.</h1>
+            <h1 className="font-serif text-[clamp(2.5rem,10vw,4.5rem)] leading-none sm:text-7xl">Tell us what kind of African journey you want.</h1>
           </div>
         </div>
       </section>
@@ -50,27 +50,27 @@ export default function PlanYourSafariPage() {
             <div className="grid gap-6 md:grid-cols-2">
               <label className="space-y-2 text-sm text-[var(--color-muted)]">
                 <span>Full name</span>
-                <input required value={form.name} onChange={(e) => handleChange("name", e.target.value)} className="w-full rounded-xl border border-[var(--color-border)] bg-[var(--color-ivory)] px-4 py-3 text-[var(--color-charcoal)] outline-none focus:border-[var(--color-gold)]" />
+                <input required type="text" autoComplete="name" value={form.name} onChange={(e) => handleChange("name", e.target.value)} className="min-h-11 w-full rounded-xl border border-[var(--color-border)] bg-[var(--color-ivory)] px-4 py-3 text-[var(--color-charcoal)] outline-none focus:border-[var(--color-gold)]" />
               </label>
               <label className="space-y-2 text-sm text-[var(--color-muted)]">
                 <span>Email</span>
-                <input required type="email" value={form.email} onChange={(e) => handleChange("email", e.target.value)} className="w-full rounded-xl border border-[var(--color-border)] bg-[var(--color-ivory)] px-4 py-3 text-[var(--color-charcoal)] outline-none focus:border-[var(--color-gold)]" />
+                <input required type="email" autoComplete="email" value={form.email} onChange={(e) => handleChange("email", e.target.value)} className="min-h-11 w-full rounded-xl border border-[var(--color-border)] bg-[var(--color-ivory)] px-4 py-3 text-[var(--color-charcoal)] outline-none focus:border-[var(--color-gold)]" />
               </label>
               <label className="space-y-2 text-sm text-[var(--color-muted)]">
                 <span>Phone</span>
-                <input required value={form.phone} onChange={(e) => handleChange("phone", e.target.value)} className="w-full rounded-xl border border-[var(--color-border)] bg-[var(--color-ivory)] px-4 py-3 text-[var(--color-charcoal)] outline-none focus:border-[var(--color-gold)]" />
+                <input required type="tel" autoComplete="tel" value={form.phone} onChange={(e) => handleChange("phone", e.target.value)} className="min-h-11 w-full rounded-xl border border-[var(--color-border)] bg-[var(--color-ivory)] px-4 py-3 text-[var(--color-charcoal)] outline-none focus:border-[var(--color-gold)]" />
               </label>
               <label className="space-y-2 text-sm text-[var(--color-muted)]">
                 <span>Country</span>
-                <input value={form.country} onChange={(e) => handleChange("country", e.target.value)} className="w-full rounded-xl border border-[var(--color-border)] bg-[var(--color-ivory)] px-4 py-3 text-[var(--color-charcoal)] outline-none focus:border-[var(--color-gold)]" />
+                <input type="text" autoComplete="country-name" value={form.country} onChange={(e) => handleChange("country", e.target.value)} className="min-h-11 w-full rounded-xl border border-[var(--color-border)] bg-[var(--color-ivory)] px-4 py-3 text-[var(--color-charcoal)] outline-none focus:border-[var(--color-gold)]" />
               </label>
               <label className="space-y-2 text-sm text-[var(--color-muted)] md:col-span-2">
                 <span>Destinations of interest</span>
-                <input value={form.destinations} onChange={(e) => handleChange("destinations", e.target.value)} className="w-full rounded-xl border border-[var(--color-border)] bg-[var(--color-ivory)] px-4 py-3 text-[var(--color-charcoal)] outline-none focus:border-[var(--color-gold)]" placeholder="Maasai Mara, Zanzibar, Serengeti..." />
+                <input type="text" value={form.destinations} onChange={(e) => handleChange("destinations", e.target.value)} className="min-h-11 w-full rounded-xl border border-[var(--color-border)] bg-[var(--color-ivory)] px-4 py-3 text-[var(--color-charcoal)] outline-none focus:border-[var(--color-gold)]" placeholder="Maasai Mara, Zanzibar, Serengeti..." />
               </label>
               <label className="space-y-2 text-sm text-[var(--color-muted)]">
                 <span>Expected travel dates</span>
-                <input value={form.dates} onChange={(e) => handleChange("dates", e.target.value)} className="w-full rounded-xl border border-[var(--color-border)] bg-[var(--color-ivory)] px-4 py-3 text-[var(--color-charcoal)] outline-none focus:border-[var(--color-gold)]" />
+                <input type="date" value={form.dates} onChange={(e) => handleChange("dates", e.target.value)} className="min-h-11 w-full rounded-xl border border-[var(--color-border)] bg-[var(--color-ivory)] px-4 py-3 text-[var(--color-charcoal)] outline-none focus:border-[var(--color-gold)]" />
               </label>
               <label className="space-y-2 text-sm text-[var(--color-muted)]">
                 <span>Flexible dates?</span>
@@ -81,11 +81,11 @@ export default function PlanYourSafariPage() {
               </label>
               <label className="space-y-2 text-sm text-[var(--color-muted)]">
                 <span>Number of adults</span>
-                <input value={form.adults} onChange={(e) => handleChange("adults", e.target.value)} className="w-full rounded-xl border border-[var(--color-border)] bg-[var(--color-ivory)] px-4 py-3 text-[var(--color-charcoal)] outline-none focus:border-[var(--color-gold)]" />
+                <input type="number" min="1" value={form.adults} onChange={(e) => handleChange("adults", e.target.value)} className="min-h-11 w-full rounded-xl border border-[var(--color-border)] bg-[var(--color-ivory)] px-4 py-3 text-[var(--color-charcoal)] outline-none focus:border-[var(--color-gold)]" />
               </label>
               <label className="space-y-2 text-sm text-[var(--color-muted)]">
                 <span>Number of children</span>
-                <input value={form.children} onChange={(e) => handleChange("children", e.target.value)} className="w-full rounded-xl border border-[var(--color-border)] bg-[var(--color-ivory)] px-4 py-3 text-[var(--color-charcoal)] outline-none focus:border-[var(--color-gold)]" />
+                <input type="number" min="0" value={form.children} onChange={(e) => handleChange("children", e.target.value)} className="min-h-11 w-full rounded-xl border border-[var(--color-border)] bg-[var(--color-ivory)] px-4 py-3 text-[var(--color-charcoal)] outline-none focus:border-[var(--color-gold)]" />
               </label>
               <label className="space-y-2 text-sm text-[var(--color-muted)]">
                 <span>Approximate trip duration</span>
@@ -120,7 +120,7 @@ export default function PlanYourSafariPage() {
               </label>
               <label className="space-y-2 text-sm text-[var(--color-muted)] md:col-span-2">
                 <span>Additional requirements</span>
-                <textarea rows={5} value={form.message} onChange={(e) => handleChange("message", e.target.value)} className="w-full rounded-xl border border-[var(--color-border)] bg-[var(--color-ivory)] px-4 py-3 text-[var(--color-charcoal)] outline-none focus:border-[var(--color-gold)]" placeholder="Tell us about flights, honeymoon details, family needs, dietary requests, or any special considerations." />
+                <textarea rows={5} value={form.message} onChange={(e) => handleChange("message", e.target.value)} className="min-h-32 w-full rounded-xl border border-[var(--color-border)] bg-[var(--color-ivory)] px-4 py-3 text-[var(--color-charcoal)] outline-none focus:border-[var(--color-gold)]" placeholder="Tell us about flights, honeymoon details, family needs, dietary requests, or any special considerations." />
               </label>
             </div>
 

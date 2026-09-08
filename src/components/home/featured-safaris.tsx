@@ -23,7 +23,7 @@ export function FeaturedSafaris() {
           {featured.map((safari) => (
             <article key={safari.slug} className="group overflow-hidden rounded-[1.8rem] border border-[var(--color-border)] bg-white shadow-[0_18px_50px_rgba(24,18,12,0.06)] transition duration-300 hover:-translate-y-1 hover:shadow-[0_24px_60px_rgba(24,18,12,0.11)]">
               <div className="relative h-72 overflow-hidden">
-                <Image src={safari.image} alt={safari.name} fill className="object-cover transition duration-500 group-hover:scale-105" />
+                <Image src={safari.image} alt={safari.name} fill sizes="(max-width: 1024px) 100vw, (max-width: 1280px) 50vw, 25vw" className="object-cover transition duration-500 group-hover:scale-105" />
                 {safari.badge ? (
                   <div className="absolute left-4 top-4 rounded-full bg-[rgba(24,18,12,0.7)] px-3 py-1.5 text-[0.62rem] font-medium uppercase tracking-[0.18em] text-white backdrop-blur-sm">
                     {safari.badge}

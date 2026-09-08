@@ -22,13 +22,13 @@ export default async function SafariDetailPage({ params }: { params: Promise<{ s
     <main className="bg-[var(--color-ivory)] text-[var(--color-charcoal)]">
       <section className="relative overflow-hidden bg-[var(--color-charcoal)] text-white">
         <div className="relative h-[620px]">
-          <Image src={safari.image} alt={safari.name} fill className="object-cover opacity-80" />
+          <Image src={safari.image} alt={safari.name} fill sizes="100vw" priority loading="eager" className="object-cover opacity-80" />
           <div className="absolute inset-0 bg-[linear-gradient(90deg,rgba(16,15,13,0.82),rgba(16,15,13,0.35),rgba(16,15,13,0.55))]" />
         </div>
         <div className="absolute inset-x-0 bottom-0 mx-auto max-w-[1400px] px-4 pb-12 sm:px-6 lg:px-8">
           <div className="max-w-3xl">
             <div className="mb-4 text-[0.7rem] font-medium uppercase tracking-[0.28em] text-[var(--color-gold)]">{safari.region}</div>
-            <h1 className="font-serif text-5xl leading-none sm:text-7xl">{safari.name}</h1>
+            <h1 className="font-serif text-[clamp(2.5rem,10vw,4.5rem)] leading-none sm:text-7xl">{safari.name}</h1>
             <div className="mt-6 flex flex-wrap gap-4 text-sm text-white/75">
               <span>{safari.destination}</span>
               <span>•</span>
@@ -121,7 +121,7 @@ export default async function SafariDetailPage({ params }: { params: Promise<{ s
         <div className="grid gap-5 md:grid-cols-3">
           {safari.gallery.map((image, index) => (
             <div key={image + index} className="relative h-80 overflow-hidden rounded-[1.8rem] border border-[var(--color-border)] bg-white">
-              <Image src={image} alt={`${safari.name} gallery ${index + 1}`} fill className="object-cover" />
+              <Image src={image} alt={`${safari.name} gallery ${index + 1}`} fill sizes="(max-width: 768px) 100vw, 33vw" className="object-cover" />
             </div>
           ))}
         </div>
@@ -137,7 +137,7 @@ export default async function SafariDetailPage({ params }: { params: Promise<{ s
             {relatedSafaris.map((item) => (
               <Link key={item.slug} href={`/safaris/${item.slug}`} className="group overflow-hidden rounded-[1.8rem] border border-[var(--color-border)] bg-white">
                 <div className="relative h-72 overflow-hidden">
-                  <Image src={item.image} alt={item.name} fill className="object-cover transition duration-500 group-hover:scale-105" />
+                  <Image src={item.image} alt={item.name} fill sizes="(max-width: 1024px) 100vw, 33vw" className="object-cover transition duration-500 group-hover:scale-105" />
                 </div>
                 <div className="space-y-4 p-6">
                   <div className="flex items-center justify-between text-[0.62rem] uppercase tracking-[0.2em] text-[var(--color-muted)]">

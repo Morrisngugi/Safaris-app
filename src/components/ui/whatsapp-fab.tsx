@@ -11,7 +11,7 @@ export function WhatsAppFab() {
     <Link
       href={`https://wa.me/${contactConfig.whatsapp.replace(/\s+/g, "")}?text=${message}`}
       aria-label="Chat on WhatsApp"
-      className="fixed bottom-5 right-5 z-50 inline-flex h-14 w-14 items-center justify-center rounded-full bg-[#25D366] text-white shadow-[0_16px_34px_rgba(32,183,93,0.35)] transition hover:scale-[1.04]"
+      className="fixed bottom-[max(1.25rem,env(safe-area-inset-bottom))] right-[max(1.25rem,env(safe-area-inset-right))] z-50 inline-flex h-14 w-14 items-center justify-center rounded-full bg-[#25D366] text-white shadow-[0_16px_34px_rgba(32,183,93,0.35)] transition hover:scale-[1.04] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[var(--color-charcoal)]"
     >
       <MessageCircle size={24} />
     </Link>

@@ -23,13 +23,13 @@ export default async function DestinationDetailPage({ params }: { params: Promis
     <main className="bg-[var(--color-ivory)] text-[var(--color-charcoal)]">
       <section className="relative overflow-hidden bg-[var(--color-charcoal)] text-white">
         <div className="relative h-[560px]">
-          <Image src={destination.image} alt={destination.name} fill className="object-cover opacity-80" />
+          <Image src={destination.image} alt={destination.name} fill sizes="100vw" priority loading="eager" className="object-cover opacity-80" />
           <div className="absolute inset-0 bg-[linear-gradient(90deg,rgba(16,15,13,0.8),rgba(16,15,13,0.4),rgba(16,15,13,0.6))]" />
         </div>
         <div className="absolute inset-x-0 bottom-0 mx-auto max-w-[1400px] px-4 pb-12 sm:px-6 lg:px-8">
           <div className="max-w-3xl">
             <div className="mb-4 text-[0.7rem] font-medium uppercase tracking-[0.28em] text-[var(--color-gold)]">{destination.region}</div>
-            <h1 className="font-serif text-5xl leading-none sm:text-7xl">{destination.name}</h1>
+            <h1 className="font-serif text-[clamp(2.5rem,10vw,4.5rem)] leading-none sm:text-7xl">{destination.name}</h1>
           </div>
         </div>
       </section>
@@ -86,7 +86,7 @@ export default async function DestinationDetailPage({ params }: { params: Promis
           {relatedSafaris.map((trip) => (
             <Link key={trip.slug} href={`/safaris/${trip.slug}`} className="group overflow-hidden rounded-[1.8rem] border border-[var(--color-border)] bg-white">
               <div className="relative h-72 overflow-hidden">
-                <Image src={trip.image} alt={trip.name} fill className="object-cover transition duration-500 group-hover:scale-105" />
+                <Image src={trip.image} alt={trip.name} fill sizes="(max-width: 1024px) 100vw, 33vw" className="object-cover transition duration-500 group-hover:scale-105" />
               </div>
               <div className="space-y-4 p-6">
                 <div className="flex items-center justify-between text-[0.62rem] uppercase tracking-[0.2em] text-[var(--color-muted)]">

@@ -31,6 +31,31 @@ body {
   line-height: 1.6;
 }
 
+button,
+input,
+select,
+textarea {
+  font: inherit;
+}
+
+button,
+select,
+input[type="button"],
+input[type="submit"] {
+  min-height: 2.75rem;
+}
+
+input,
+select,
+textarea {
+  max-width: 100%;
+}
+
+:focus-visible {
+  outline: 2px solid var(--color-gold);
+  outline-offset: 3px;
+}
+
 h1, h2, h3, h4, h5, h6 {
   font-family: var(--font-cormorant), Georgia, serif;
   letter-spacing: -0.03em;

@@ -11,18 +11,19 @@ export function Hero() {
           alt="Safari plains in East Africa"
           fill
           priority
+          sizes="100vw"
           className="object-cover opacity-75"
         />
         <div className="absolute inset-0 bg-[linear-gradient(90deg,rgba(16,15,13,0.82),rgba(16,15,13,0.32),rgba(16,15,13,0.42))]" />
       </div>
 
-      <div className="relative mx-auto flex min-h-[760px] max-w-[1400px] items-end px-4 pb-16 pt-32 sm:px-6 lg:px-8">
+      <div className="relative mx-auto flex min-h-[680px] max-w-[1400px] items-end px-4 pb-14 pt-28 sm:min-h-[760px] sm:px-6 sm:pb-16 sm:pt-32 lg:px-8">
         <div className="max-w-3xl">
           <div className="mb-6 inline-flex items-center rounded-full border border-white/15 bg-white/5 px-4 py-2 text-[0.7rem] font-medium uppercase tracking-[0.28em] text-white/85 backdrop-blur-sm">
             Ivory Atlas Tours & Safaris
           </div>
 
-          <h1 className="max-w-2xl font-serif text-5xl leading-[0.92] text-white sm:text-6xl lg:text-8xl">
+          <h1 className="max-w-2xl font-serif text-[clamp(2.5rem,10vw,5rem)] leading-[0.92] text-white sm:text-6xl lg:text-8xl">
             Journeys Through Africa,
             <span className="mt-2 block text-[var(--color-gold)]">Thoughtfully Crafted.</span>
           </h1>
