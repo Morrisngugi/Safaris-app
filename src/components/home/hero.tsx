@@ -65,7 +65,6 @@ export function Hero() {
           <div className="mb-5 flex flex-wrap items-center gap-x-4 gap-y-2 text-[0.68rem] font-medium uppercase tracking-[0.24em] text-white/80">
             <span>{scene.location}</span>
             <span className="h-px w-10 bg-[var(--color-gold)]" />
-            <span>{String(activeScene + 1).padStart(2, "0")} / {String(scenes.length).padStart(2, "0")}</span>
           </div>
 
           <h1 className="max-w-2xl font-serif text-[clamp(2.5rem,10vw,5rem)] leading-[0.92] text-white sm:text-6xl lg:text-8xl">
