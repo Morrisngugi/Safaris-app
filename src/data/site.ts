@@ -14,15 +14,9 @@ export const navItems: NavItem[] = [
 export const contactConfig: ContactConfig = {
   company: "Ivory Atlas Tours & Safaris Ltd.",
   tagline: "The Wild, Reimagined.",
-  phone: "+254 700 000 000",
-  whatsapp: "+254700000000",
-  email: "hello@ivoryatlas.com",
-  address: "Nairobi, Kenya",
-  socials: {
-    instagram: "https://instagram.com",
-    facebook: "https://facebook.com",
-    youtube: "https://youtube.com",
-  },
+  phoneDisplay: "0181457571",
+  phoneHref: "tel:0181457571",
+  email: "info@ivoryatlastours.com",
 };
 
 export const siteDefaults = {

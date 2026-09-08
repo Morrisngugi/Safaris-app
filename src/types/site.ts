@@ -74,13 +74,14 @@ export type JournalArticle = {
 export type ContactConfig = {
   company: string;
   tagline: string;
-  phone: string;
-  whatsapp: string;
+  phoneDisplay: string;
+  phoneHref: string;
   email: string;
-  address: string;
-  socials: {
-    instagram: string;
-    facebook: string;
-    youtube: string;
+  whatsappNumber?: string;
+  address?: string;
+  socials?: {
+    instagram?: string;
+    facebook?: string;
+    youtube?: string;
   };
 };

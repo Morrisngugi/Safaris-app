@@ -1,6 +1,6 @@
 import Link from "next/link";
 import Image from "next/image";
-import { Mail, MapPin, MessageCircle, Phone } from "lucide-react";
+import { Mail, Phone } from "lucide-react";
 import { contactConfig, navItems } from "@/data/site";
 
 export function SiteFooter() {
@@ -48,10 +48,9 @@ export function SiteFooter() {
           <div>
             <h3 className="mb-5 text-sm font-semibold uppercase tracking-[0.2em] text-[var(--color-gold)]">Contact</h3>
             <ul className="space-y-4 text-sm text-white/75">
-              <li className="flex items-start gap-3"><Phone size={16} className="mt-0.5 text-[var(--color-gold)]" /> <span>{contactConfig.phone}</span></li>
-              <li className="flex items-start gap-3"><Mail size={16} className="mt-0.5 text-[var(--color-gold)]" /> <span>{contactConfig.email}</span></li>
-              <li className="flex items-start gap-3"><MapPin size={16} className="mt-0.5 text-[var(--color-gold)]" /> <span>{contactConfig.address}</span></li>
-              <li className="flex items-start gap-3"><MessageCircle size={16} className="mt-0.5 text-[var(--color-gold)]" /> <span>WhatsApp</span></li>
+              <li className="flex items-start gap-3"><Phone size={16} className="mt-0.5 text-[var(--color-gold)]" /> <a href={contactConfig.phoneHref} className="transition hover:text-white">{contactConfig.phoneDisplay}</a></li>
+              <li className="flex items-start gap-3"><Mail size={16} className="mt-0.5 text-[var(--color-gold)]" /> <a href={`mailto:${contactConfig.email}`} className="transition hover:text-white">{contactConfig.email}</a></li>
+              {contactConfig.address ? <li className="flex items-start gap-3 text-white/75"><span>{contactConfig.address}</span></li> : null}
             </ul>
           </div>
         </div>
