@@ -2,47 +2,10 @@ import Image from "next/image";
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 import { experiences } from "@/data/experiences";
+import { PageCta } from "@/components/ui/page-cta";
 
 export default function ExperiencesPage() {
   return (
-    <main>
-      <section className="bg-[var(--color-charcoal)] text-white">
-        <div className="mx-auto grid max-w-[1400px] gap-10 px-4 py-28 sm:px-6 lg:grid-cols-[1fr_1.1fr] lg:px-8 lg:py-32">
-          <div className="flex flex-col justify-center">
-            <div className="mb-4 text-[0.7rem] font-medium uppercase tracking-[0.28em] text-[var(--color-gold)]">Experiences</div>
-            <h1 className="font-serif text-[clamp(2.5rem,10vw,4.5rem)] leading-none sm:text-7xl">Travel the way you want to remember it.</h1>
-          </div>
-          <div className="relative h-[420px] overflow-hidden rounded-[2rem] border border-white/10">
-            <Image src="https://images.unsplash.com/photo-1521295121783-8a321d551ad2?auto=format&fit=crop&w=1400&q=80" alt="Luxury safari camp" fill sizes="(max-width: 1024px) 100vw, 50vw" priority loading="eager" className="object-cover" />
-          </div>
-        </div>
-      </section>
-
-      <section className="bg-[var(--color-ivory)] py-24">
-        <div className="mx-auto max-w-[1400px] px-4 sm:px-6 lg:px-8">
-          <div className="grid gap-8 lg:grid-cols-2 xl:grid-cols-3">
-            {experiences.map((experience) => (
-              <article key={experience.slug} className="overflow-hidden rounded-[1.8rem] border border-[var(--color-border)] bg-white shadow-[0_18px_52px_rgba(24,18,12,0.05)]">
-                <div className="relative h-72 overflow-hidden">
-                  <Image src={experience.image} alt={experience.title} fill sizes="(max-width: 1024px) 100vw, (max-width: 1280px) 50vw, 33vw" className="object-cover" />
-                </div>
-                <div className="space-y-5 p-6">
-                  <h3 className="font-serif text-4xl leading-none text-[var(--color-charcoal)]">{experience.title}</h3>
-                  <p className="text-sm leading-7 text-[var(--color-muted)]">{experience.description}</p>
-                  <div className="flex flex-wrap gap-2">
-                    {experience.destinations.map((destination) => (
-                      <span key={destination} className="rounded-full border border-[var(--color-gold)]/30 bg-[var(--color-gold)]/5 px-2.5 py-1.5 text-[0.6rem] uppercase tracking-[0.2em] text-[var(--color-gold)]">{destination}</span>
-                    ))}
-                  </div>
-                  <Link href="/plan-your-safari" className="inline-flex items-center gap-2 text-sm font-medium text-[var(--color-charcoal)] transition hover:text-[var(--color-gold)]">
-                    Enquire now <ArrowRight size={15} />
-                  </Link>
-                </div>
-              </article>
-            ))}
-          </div>
-        </div>
-      </section>
-    </main>
+    <main><section className="bg-[var(--color-charcoal)] text-white"><div className="mx-auto grid max-w-[1400px] gap-10 px-4 pb-20 pt-28 sm:px-6 sm:pb-28 sm:pt-36 lg:grid-cols-[0.9fr_1.1fr] lg:items-end lg:px-8"><div><div className="mb-5 text-[0.7rem] uppercase tracking-[0.28em] text-[var(--color-gold)]">Experiences</div><h1 className="font-serif text-[clamp(3rem,8vw,7rem)] leading-[0.86]">Travel the way you want to remember it.</h1><p className="mt-7 max-w-xl text-lg leading-8 text-white/70">The best journeys are shaped not only by where you go, but by how you want Africa to feel.</p></div><div className="relative min-h-[360px] overflow-hidden rounded-[2rem] sm:min-h-[500px]"><Image src={experiences[0].image} alt={experiences[0].title} fill sizes="(max-width: 1024px) 100vw, 60vw" priority className="object-cover" /></div></div></section><section className="bg-[var(--color-ivory)] py-24 sm:py-32"><div className="mx-auto max-w-[1200px] px-4 sm:px-6 lg:px-8">{experiences.slice(0, 6).map((experience, index) => <article id={experience.slug} key={experience.slug} className={`grid gap-10 border-b border-[var(--color-border)] py-16 first:pt-0 last:border-0 lg:grid-cols-2 lg:items-center ${index % 2 ? "lg:[&>*:first-child]:order-2" : ""}`}><div className={`relative min-h-[360px] overflow-hidden rounded-[1.8rem] ${index % 3 === 0 ? "sm:min-h-[520px]" : "sm:min-h-[400px]"}`}><Image src={experience.image} alt={experience.title} fill sizes="(max-width: 1024px) 100vw, 50vw" className="object-cover transition duration-700 hover:scale-[1.03]" /></div><div className="max-w-xl"><div className="mb-4 text-[0.68rem] uppercase tracking-[0.22em] text-[var(--color-gold)]">{experience.destinations.join(" · ")}</div><h2 className="font-serif text-5xl leading-[0.9] text-[var(--color-charcoal)] sm:text-7xl">{experience.title}</h2><p className="mt-6 text-lg leading-8 text-[var(--color-muted)]">{experience.description}</p><Link href="/plan-your-safari" className="mt-7 inline-flex min-h-11 items-center gap-2 text-sm font-medium text-[var(--color-charcoal)] transition hover:text-[var(--color-gold)]">Plan this experience <ArrowRight size={16} /></Link></div></article>)}</div></section><PageCta eyebrow="How do you want Africa to feel?" title="Let's design around the experience." description="Share the feeling you want to take home and we&apos;ll shape the journey around it." image={experiences[2].image} /></main>
   );
 }

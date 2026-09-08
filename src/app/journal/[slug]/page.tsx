@@ -3,6 +3,7 @@ import Link from "next/link";
 import { ArrowLeft } from "lucide-react";
 import { notFound } from "next/navigation";
 import { journalArticles } from "@/data/journal";
+import { PageCta } from "@/components/ui/page-cta";
 
 export function generateStaticParams() {
   return journalArticles.map((article) => ({ slug: article.slug }));
@@ -24,8 +25,9 @@ export default async function JournalDetailPage({ params }: { params: Promise<{ 
             <ArrowLeft size={15} /> Back to journal
           </Link>
           <div className="max-w-4xl">
-            <div className="mb-4 text-[0.7rem] font-medium uppercase tracking-[0.28em] text-[var(--color-gold)]">{article.category}</div>
+            <div className="mb-4 text-[0.7rem] font-medium uppercase tracking-[0.28em] text-[var(--color-gold)]">{article.category} · {article.readTime}</div>
             <h1 className="font-serif text-[clamp(2.5rem,10vw,4.5rem)] leading-none sm:text-7xl">{article.title}</h1>
+            <p className="mt-6 max-w-2xl text-lg leading-8 text-white/70">{article.excerpt}</p>
             <div className="mt-6 flex flex-wrap items-center gap-4 text-sm text-white/70">
               <span>{article.publishedAt}</span>
               <span>•</span>
@@ -48,6 +50,7 @@ export default async function JournalDetailPage({ params }: { params: Promise<{ 
           ))}
         </div>
       </section>
+      <PageCta eyebrow="Inspired to start planning?" title="Turn the idea into a journey." description="Bring the feeling from the field notes into a trip shaped around you." image={article.image} />
     </main>
   );
 }

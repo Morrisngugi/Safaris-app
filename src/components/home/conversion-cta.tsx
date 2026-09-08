@@ -21,9 +21,9 @@ export function ConversionCta() {
             <Link href="/plan-your-safari" className="inline-flex items-center justify-center gap-2 rounded-full bg-[var(--color-gold)] px-6 py-3.5 text-sm font-medium text-[#1d1a17] transition hover:bg-[#c89d4f]">
               Start Planning <ArrowRight size={16} />
             </Link>
-            <a href="https://wa.me/254700000000?text=Hello%20Ivory%20Atlas%2C%20I%20would%20like%20to%20plan%20a%20safari." className="inline-flex items-center justify-center gap-2 rounded-full border border-white/20 bg-white/5 px-6 py-3.5 text-sm font-medium text-white transition hover:bg-white/10">
-              <MessageCircle size={16} /> WhatsApp Our Safari Team
-            </a>
+            <Link href="/contact" className="inline-flex items-center justify-center gap-2 rounded-full border border-white/20 bg-white/5 px-6 py-3.5 text-sm font-medium text-white transition hover:bg-white/10">
+              <MessageCircle size={16} /> Talk to Our Safari Team
+            </Link>
           </div>
         </div>
       </div>

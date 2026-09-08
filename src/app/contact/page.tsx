@@ -7,15 +7,16 @@ export default function ContactPage() {
       <section className="bg-[var(--color-charcoal)] text-white">
         <div className="mx-auto max-w-[1400px] px-4 py-28 sm:px-6 lg:px-8 lg:py-32">
           <div className="max-w-3xl">
-            <div className="mb-4 text-[0.7rem] font-medium uppercase tracking-[0.28em] text-[var(--color-gold)]">Contact</div>
-            <h1 className="font-serif text-[clamp(2.5rem,10vw,4.5rem)] leading-none sm:text-7xl">Let’s craft your next itinerary.</h1>
+            <div className="mb-4 text-[0.7rem] font-medium uppercase tracking-[0.28em] text-[var(--color-gold)]">Contact Ivory Atlas</div>
+            <h1 className="font-serif text-[clamp(2.5rem,10vw,4.5rem)] leading-none sm:text-7xl">Let&apos;s start with a conversation.</h1>
+            <p className="mt-6 max-w-xl text-lg leading-8 text-white/70">Whether you already know where you want to go or are only beginning to imagine the journey, tell us what you have in mind.</p>
           </div>
         </div>
       </section>
 
       <section className="bg-[var(--color-ivory)] py-24">
         <div className="mx-auto grid max-w-[1400px] gap-10 px-4 sm:px-6 lg:grid-cols-[0.9fr_1.1fr] lg:px-8">
-          <div className="space-y-6 rounded-[2rem] border border-[var(--color-border)] bg-white p-8">
+          <div className="space-y-6 border-y border-[var(--color-border)] bg-transparent py-8">
             <div>
               <div className="mb-3 text-[0.7rem] font-medium uppercase tracking-[0.28em] text-[var(--color-gold)]">Get in touch</div>
               <h2 className="font-serif text-4xl leading-none text-[var(--color-charcoal)]">Our team is ready to help.</h2>

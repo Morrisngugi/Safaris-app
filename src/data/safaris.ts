@@ -17,7 +17,7 @@ export const safaris: Safari[] = [
       "https://images.unsplash.com/photo-1474511320723-9a56873867b5?auto=format&fit=crop&w=900&q=80",
       "https://images.unsplash.com/photo-1516426122078-c23e76319801?auto=format&fit=crop&w=900&q=80",
     ],
-    priceFrom: "From $3,600",
+    priceFrom: "Request a Quote",
     badge: "Featured",
     highlights: ["Migration viewing", "Private game drives", "Luxury tented camp"],
     itinerary: [
@@ -49,7 +49,7 @@ export const safaris: Safari[] = [
       "https://images.unsplash.com/photo-1547036967-23d11aacaee0?auto=format&fit=crop&w=900&q=80",
       "https://images.unsplash.com/photo-1521295121783-8a321d551ad2?auto=format&fit=crop&w=900&q=80",
     ],
-    priceFrom: "From $2,700",
+    priceFrom: "Request a Quote",
     highlights: ["Big cats", "Sunrise drive", "Cultural visit"],
     itinerary: [
       { day: "Day 1", title: "Arrival in the Mara", description: "Settle into camp and meet your guide for a relaxed orientation drive." },
@@ -79,7 +79,7 @@ export const safaris: Safari[] = [
       "https://images.unsplash.com/photo-1547036967-23d11aacaee0?auto=format&fit=crop&w=900&q=80",
       "https://images.unsplash.com/photo-1474511320723-9a56873867b5?auto=format&fit=crop&w=900&q=80",
     ],
-    priceFrom: "From $2,100",
+    priceFrom: "Request a Quote",
     highlights: ["Elephant herds", "Sunrise drives", "Mountain views"],
     itinerary: [
       { day: "Day 1", title: "Arrival and acclimatization", description: "Check in and enjoy a sunset drive through the plains." },
@@ -108,7 +108,7 @@ export const safaris: Safari[] = [
       "https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=900&q=80",
       "https://images.unsplash.com/photo-1546182990-dffeafbe841d?auto=format&fit=crop&w=900&q=80",
     ],
-    priceFrom: "From $4,100",
+    priceFrom: "Request a Quote",
     badge: "Popular",
     highlights: ["Predator tracking", "Open savannahs", "Remote luxury stays"],
     itinerary: [
@@ -141,7 +141,7 @@ export const safaris: Safari[] = [
       "https://images.unsplash.com/photo-1519046904884-53103b34b206?auto=format&fit=crop&w=900&q=80",
       "https://images.unsplash.com/photo-1529156069898-49953e39b3ac?auto=format&fit=crop&w=900&q=80",
     ],
-    priceFrom: "From $3,950",
+    priceFrom: "Request a Quote",
     highlights: ["Beach luxury", "Stone Town", "Safari and coast"],
     itinerary: [
       { day: "Day 1", title: "Arrival in Arusha", description: "Transfer to your safari base and settle into the journey." },
@@ -174,7 +174,7 @@ export const safaris: Safari[] = [
       "https://images.unsplash.com/photo-1547036967-23d11aacaee0?auto=format&fit=crop&w=900&q=80",
       "https://images.unsplash.com/photo-1516426122078-c23e76319801?auto=format&fit=crop&w=900&q=80",
     ],
-    priceFrom: "From $2,400",
+    priceFrom: "Request a Quote",
     highlights: ["Unique species", "Cultural visits", "Dry-country landscapes"],
     itinerary: [
       { day: "Day 1", title: "Arrival and orientation", description: "Settle into camp and enjoy your first drive through the Reserve." },

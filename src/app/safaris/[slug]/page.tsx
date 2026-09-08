@@ -3,6 +3,7 @@ import Link from "next/link";
 import { ArrowRight, Check, CircleDashed } from "lucide-react";
 import { notFound } from "next/navigation";
 import { safaris } from "@/data/safaris";
+import { PageCta } from "@/components/ui/page-cta";
 
 export function generateStaticParams() {
   return safaris.map((safari) => ({ slug: safari.slug }));
@@ -33,6 +34,8 @@ export default async function SafariDetailPage({ params }: { params: Promise<{ s
               <span>{safari.destination}</span>
               <span>•</span>
               <span>{safari.duration}</span>
+              <span>•</span>
+              <Link href="/plan-your-safari" className="text-[var(--color-gold)]">Request a Quote <ArrowRight className="ml-1 inline" size={14} /></Link>
             </div>
           </div>
         </div>
@@ -73,9 +76,9 @@ export default async function SafariDetailPage({ params }: { params: Promise<{ s
           </div>
 
           <aside className="space-y-6">
-            <div className="rounded-[1.8rem] border border-[var(--color-border)] bg-white p-6 shadow-[0_18px_48px_rgba(24,18,12,0.04)]">
-              <div className="text-[0.62rem] uppercase tracking-[0.22em] text-[var(--color-gold)]">Starting from</div>
-              <div className="mt-2 text-4xl font-semibold text-[var(--color-charcoal)]">{safari.priceFrom}</div>
+            <div className="border-y border-[var(--color-border)] py-6">
+              <div className="text-[0.62rem] uppercase tracking-[0.22em] text-[var(--color-gold)]">Tailored journey</div>
+              <div className="mt-2 font-serif text-4xl text-[var(--color-charcoal)]">Request a Quote</div>
               <div className="mt-5 space-y-3 text-sm text-[var(--color-muted)]">
                 <div className="flex items-center gap-2"><Check size={16} className="text-[var(--color-gold)]" /> <span>Tailored itinerary</span></div>
                 <div className="flex items-center gap-2"><Check size={16} className="text-[var(--color-gold)]" /> <span>Expert local guide</span></div>
@@ -86,7 +89,7 @@ export default async function SafariDetailPage({ params }: { params: Promise<{ s
               </Link>
             </div>
 
-            <div className="rounded-[1.8rem] border border-[var(--color-border)] bg-white p-6">
+            <div className="border-y border-[var(--color-border)] bg-transparent py-6">
               <div className="mb-4 text-[0.7rem] font-medium uppercase tracking-[0.28em] text-[var(--color-gold)]">Accommodations</div>
               <ul className="space-y-3 text-sm text-[var(--color-muted)]">
                 {safari.accommodations.map((item) => (
@@ -95,7 +98,7 @@ export default async function SafariDetailPage({ params }: { params: Promise<{ s
               </ul>
             </div>
 
-            <div className="rounded-[1.8rem] border border-[var(--color-border)] bg-white p-6">
+            <div className="border-y border-[var(--color-border)] bg-transparent py-6">
               <div className="mb-4 text-[0.7rem] font-medium uppercase tracking-[0.28em] text-[var(--color-gold)]">Includes</div>
               <ul className="space-y-3 text-sm text-[var(--color-muted)]">
                 {safari.includes.map((item) => (
@@ -112,6 +115,7 @@ export default async function SafariDetailPage({ params }: { params: Promise<{ s
           </aside>
         </div>
       </section>
+      <PageCta eyebrow="Plan this journey" title="Looking for something more personal?" description="Tell us what you want this journey to feel like and we&apos;ll shape the details around you." image={safari.image} />
 
       <section className="mx-auto max-w-[1400px] px-4 pb-20 sm:px-6 lg:px-8">
         <div className="mb-8">

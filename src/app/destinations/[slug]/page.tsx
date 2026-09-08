@@ -1,9 +1,10 @@
 import Image from "next/image";
 import Link from "next/link";
-import { ArrowRight, Check } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 import { notFound } from "next/navigation";
 import { destinations } from "@/data/destinations";
 import { safaris } from "@/data/safaris";
+import { PageCta } from "@/components/ui/page-cta";
 
 export function generateStaticParams() {
   return destinations.map((destination) => ({ slug: destination.slug }));
@@ -12,96 +13,37 @@ export function generateStaticParams() {
 export default async function DestinationDetailPage({ params }: { params: Promise<{ slug: string }> }) {
   const { slug } = await params;
   const destination = destinations.find((item) => item.slug === slug);
-
-  if (!destination) {
-    notFound();
-  }
-
+  if (!destination) notFound();
   const relatedSafaris = safaris.filter((trip) => destination.safariSlugs.includes(trip.slug));
+  const experiences = [...destination.highlights, ...destination.experiences].slice(0, 6);
 
   return (
     <main className="bg-[var(--color-ivory)] text-[var(--color-charcoal)]">
-      <section className="relative overflow-hidden bg-[var(--color-charcoal)] text-white">
-        <div className="relative h-[560px]">
-          <Image src={destination.image} alt={destination.name} fill sizes="100vw" priority loading="eager" className="object-cover opacity-80" />
-          <div className="absolute inset-0 bg-[linear-gradient(90deg,rgba(16,15,13,0.8),rgba(16,15,13,0.4),rgba(16,15,13,0.6))]" />
-        </div>
-        <div className="absolute inset-x-0 bottom-0 mx-auto max-w-[1400px] px-4 pb-12 sm:px-6 lg:px-8">
+      <section className="relative isolate min-h-[650px] overflow-hidden bg-[var(--color-charcoal)] text-white sm:min-h-[760px]">
+        <Image src={destination.image} alt={destination.name} fill sizes="100vw" priority className="object-cover" />
+        <div className="absolute inset-0 bg-[linear-gradient(90deg,rgba(16,15,13,0.82),rgba(16,15,13,0.3),rgba(16,15,13,0.52))]" />
+        <div className="absolute inset-x-0 bottom-0 mx-auto max-w-[1400px] px-4 pb-14 sm:px-6 sm:pb-20 lg:px-8">
           <div className="max-w-3xl">
-            <div className="mb-4 text-[0.7rem] font-medium uppercase tracking-[0.28em] text-[var(--color-gold)]">{destination.region}</div>
-            <h1 className="font-serif text-[clamp(2.5rem,10vw,4.5rem)] leading-none sm:text-7xl">{destination.name}</h1>
+            <div className="mb-4 text-[0.7rem] uppercase tracking-[0.28em] text-[var(--color-gold)]">{destination.name} · {destination.region}</div>
+            <h1 className="font-serif text-[clamp(3.2rem,8vw,8rem)] leading-[0.84]">{destination.name}</h1>
+            <p className="mt-6 max-w-2xl text-lg leading-8 text-white/75">{destination.summary}</p>
           </div>
         </div>
       </section>
 
-      <section className="mx-auto max-w-[1400px] px-4 py-20 sm:px-6 lg:px-8">
-        <div className="grid gap-10 lg:grid-cols-[1.2fr_0.8fr]">
-          <div className="space-y-8">
-            <div>
-              <div className="mb-4 text-[0.7rem] font-medium uppercase tracking-[0.28em] text-[var(--color-gold)]">Overview</div>
-              <p className="text-lg leading-8 text-[var(--color-muted)]">{destination.description}</p>
-            </div>
-
-            <div>
-              <div className="mb-5 text-[0.7rem] font-medium uppercase tracking-[0.28em] text-[var(--color-gold)]">Highlights</div>
-              <div className="grid gap-3 md:grid-cols-2">
-                {destination.highlights.map((highlight) => (
-                  <div key={highlight} className="flex items-center gap-3 rounded-2xl border border-[var(--color-border)] bg-white p-4 text-base text-[var(--color-muted)]">
-                    <Check size={18} className="text-[var(--color-gold)]" /> {highlight}
-                  </div>
-                ))}
-              </div>
-            </div>
-
-            <div>
-              <div className="mb-4 text-[0.7rem] font-medium uppercase tracking-[0.28em] text-[var(--color-gold)]">Best time to visit</div>
-              <div className="rounded-[1.8rem] border border-[var(--color-border)] bg-white p-6 text-lg text-[var(--color-muted)]">
-                {destination.bestTime}
-              </div>
-            </div>
-          </div>
-
-          <aside className="space-y-6">
-            <div className="rounded-[1.8rem] border border-[var(--color-border)] bg-white p-6 shadow-[0_18px_48px_rgba(24,18,12,0.04)]">
-              <div className="mb-4 text-[0.7rem] font-medium uppercase tracking-[0.28em] text-[var(--color-gold)]">Experiences</div>
-              <ul className="space-y-3 text-sm text-[var(--color-muted)]">
-                {destination.experiences.map((experience) => (
-                  <li key={experience} className="flex items-center gap-3"><Check size={16} className="text-[var(--color-gold)]" /> {experience}</li>
-                ))}
-              </ul>
-              <Link href="/plan-your-safari" className="mt-6 inline-flex w-full items-center justify-center gap-2 rounded-full bg-[var(--color-gold)] px-5 py-3 text-sm font-medium text-[#1d1a17] transition hover:bg-[#c89d4f]">
-                Enquire about this destination <ArrowRight size={15} />
-              </Link>
-            </div>
-          </aside>
+      <section className="bg-[var(--color-ivory)] py-24 sm:py-32">
+        <div className="mx-auto grid max-w-[1200px] gap-14 px-4 sm:px-6 lg:grid-cols-[1.1fr_0.9fr] lg:px-8">
+          <div><div className="mb-5 text-[0.7rem] uppercase tracking-[0.28em] text-[var(--color-gold)]">Sense of place</div><h2 className="font-serif text-5xl leading-[0.9] sm:text-7xl">A place with its own rhythm.</h2><p className="mt-7 max-w-2xl text-lg leading-8 text-[var(--color-muted)]">{destination.description}</p></div>
+          <div className="border-y border-[var(--color-border)] py-6"><div className="text-[0.65rem] uppercase tracking-[0.2em] text-[var(--color-gold)]">Best time to visit</div><p className="mt-3 font-serif text-4xl">{destination.bestTime}</p><p className="mt-4 text-sm leading-7 text-[var(--color-muted)]">The right timing depends on the atmosphere, wildlife and pace you want from your journey.</p></div>
         </div>
       </section>
 
-      <section className="mx-auto max-w-[1400px] px-4 pb-20 sm:px-6 lg:px-8">
-        <div className="mb-8">
-          <div className="mb-4 text-[0.7rem] font-medium uppercase tracking-[0.28em] text-[var(--color-gold)]">Related safaris</div>
-          <h2 className="font-serif text-4xl leading-none text-[var(--color-charcoal)] sm:text-5xl">Explore journeys in {destination.name}</h2>
-        </div>
-        <div className="grid gap-8 lg:grid-cols-3">
-          {relatedSafaris.map((trip) => (
-            <Link key={trip.slug} href={`/safaris/${trip.slug}`} className="group overflow-hidden rounded-[1.8rem] border border-[var(--color-border)] bg-white">
-              <div className="relative h-72 overflow-hidden">
-                <Image src={trip.image} alt={trip.name} fill sizes="(max-width: 1024px) 100vw, 33vw" className="object-cover transition duration-500 group-hover:scale-105" />
-              </div>
-              <div className="space-y-4 p-6">
-                <div className="flex items-center justify-between text-[0.62rem] uppercase tracking-[0.2em] text-[var(--color-muted)]">
-                  <span>{trip.destination}</span>
-                  <span>{trip.duration}</span>
-                </div>
-                <h3 className="font-serif text-3xl leading-none text-[var(--color-charcoal)]">{trip.name}</h3>
-                <div className="inline-flex items-center gap-2 text-sm font-medium text-[var(--color-charcoal)]">
-                  View safari <ArrowRight size={15} />
-                </div>
-              </div>
-            </Link>
-          ))}
-        </div>
-      </section>
+      <section className="bg-[var(--color-sand)] py-24 sm:py-32"><div className="mx-auto max-w-[1200px] px-4 sm:px-6 lg:px-8"><div className="max-w-3xl"><div className="mb-5 text-[0.7rem] uppercase tracking-[0.28em] text-[var(--color-gold)]">Why go</div><h2 className="font-serif text-5xl leading-[0.9] sm:text-7xl">The experiences that define {destination.name}.</h2></div><div className="mt-14 grid gap-0 divide-y divide-[var(--color-border)] border-y border-[var(--color-border)] sm:grid-cols-2 sm:divide-x sm:divide-y-0">{experiences.map((item) => <div key={item} className="p-6 sm:p-8"><div className="mb-4 h-px w-10 bg-[var(--color-gold)]" /><p className="font-serif text-3xl">{item}</p></div>)}</div></div></section>
+
+      <section className="bg-[var(--color-charcoal)] py-24 text-white sm:py-32"><div className="mx-auto grid max-w-[1400px] gap-8 px-4 sm:px-6 lg:grid-cols-[1.25fr_0.75fr] lg:px-8"><div className="relative min-h-[480px] overflow-hidden rounded-[1.8rem]"><Image src={destination.image} alt={`${destination.name} landscape`} fill sizes="(max-width: 1024px) 100vw, 65vw" className="object-cover" /></div><div className="flex flex-col justify-end"><div className="text-[0.7rem] uppercase tracking-[0.28em] text-[var(--color-gold)]">A closer look</div><p className="mt-5 font-serif text-5xl leading-[0.9] sm:text-6xl">Let the landscape set the pace.</p></div></div></section>
+
+      <section className="bg-[var(--color-ivory)] py-24 sm:py-32"><div className="mx-auto max-w-[1200px] px-4 sm:px-6 lg:px-8"><div className="mb-10"><div className="mb-4 text-[0.7rem] uppercase tracking-[0.28em] text-[var(--color-gold)]">Related journeys</div><h2 className="font-serif text-5xl leading-[0.9] sm:text-7xl">Journeys through {destination.name}.</h2></div><div className="divide-y divide-[var(--color-border)] border-y border-[var(--color-border)]">{relatedSafaris.map((trip) => <Link key={trip.slug} href={`/safaris/${trip.slug}`} className="group flex flex-col gap-4 py-7 sm:flex-row sm:items-center sm:justify-between"><div><div className="text-[0.65rem] uppercase tracking-[0.2em] text-[var(--color-gold)]">{trip.duration} · {trip.experience}</div><h3 className="mt-2 font-serif text-4xl">{trip.name}</h3><p className="mt-2 max-w-2xl text-sm leading-7 text-[var(--color-muted)]">{trip.summary}</p></div><span className="inline-flex items-center gap-2 text-sm">View journey <ArrowRight size={16} className="transition-transform group-hover:translate-x-1" /></span></Link>)}</div></div></section>
+      <PageCta eyebrow="Not sure where to begin?" title="Let&apos;s find the places that fit your journey." description="Tell us what draws you to Africa and we&apos;ll help shape the destinations around your journey." image={destination.image} />
     </main>
   );
 }

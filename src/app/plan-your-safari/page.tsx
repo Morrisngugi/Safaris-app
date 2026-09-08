@@ -39,14 +39,16 @@ export default function PlanYourSafariPage() {
         <div className="mx-auto max-w-[1400px] px-4 py-28 sm:px-6 lg:px-8 lg:py-32">
           <div className="max-w-3xl">
             <div className="mb-4 text-[0.7rem] font-medium uppercase tracking-[0.28em] text-[var(--color-gold)]">Plan your safari</div>
-            <h1 className="font-serif text-[clamp(2.5rem,10vw,4.5rem)] leading-none sm:text-7xl">Tell us what kind of African journey you want.</h1>
+            <h1 className="font-serif text-[clamp(2.5rem,10vw,4.5rem)] leading-none sm:text-7xl">Tell us how you imagine Africa.</h1>
+            <p className="mt-6 max-w-xl text-lg leading-8 text-white/70">Share the shape of the journey you have in mind. We&apos;ll use the details to help create an itinerary around you.</p>
           </div>
         </div>
       </section>
 
       <section className="bg-[var(--color-ivory)] py-24">
         <div className="mx-auto max-w-[1200px] px-4 sm:px-6 lg:px-8">
-          <form onSubmit={handleSubmit} className="rounded-[2.2rem] border border-[var(--color-border)] bg-white p-6 shadow-[0_18px_52px_rgba(24,18,12,0.04)] sm:p-8 lg:p-10">
+          <form onSubmit={handleSubmit} className="border-y border-[var(--color-border)] bg-transparent py-8 sm:py-10">
+            <div className="mb-8"><div className="text-[0.68rem] uppercase tracking-[0.22em] text-[var(--color-gold)]">About you</div><p className="mt-2 text-sm text-[var(--color-muted)]">A few details to help us begin.</p></div>
             <div className="grid gap-6 md:grid-cols-2">
               <label className="space-y-2 text-sm text-[var(--color-muted)]">
                 <span>Full name</span>
@@ -125,9 +127,9 @@ export default function PlanYourSafariPage() {
             </div>
 
             <div className="mt-8 flex flex-col gap-4 border-t border-[var(--color-border)] pt-6 sm:flex-row sm:items-center sm:justify-between">
-              <p className="text-sm text-[var(--color-muted)]">Demo form state: submission is handled locally for now.</p>
+              <p className="text-sm text-[var(--color-muted)]">This preview captures your travel brief locally for now. A submission service can be connected when ready.</p>
               <button type="submit" className="inline-flex items-center justify-center rounded-full bg-[var(--color-gold)] px-6 py-3 text-sm font-medium text-[#1d1a17] transition hover:bg-[#c89d4f]">
-                Submit enquiry
+                Send My Travel Brief
               </button>
             </div>
 

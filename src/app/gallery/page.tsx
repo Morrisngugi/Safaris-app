@@ -1,45 +1,9 @@
 import Image from "next/image";
+import Link from "next/link";
+import { ArrowRight } from "lucide-react";
 import { galleryItems } from "@/data/gallery";
 
 export default function GalleryPage() {
-  return (
-    <main>
-      <section className="bg-[var(--color-charcoal)] text-white">
-        <div className="mx-auto max-w-[1400px] px-4 py-28 sm:px-6 lg:px-8 lg:py-32">
-          <div className="max-w-3xl">
-            <div className="mb-4 text-[0.7rem] font-medium uppercase tracking-[0.28em] text-[var(--color-gold)]">Gallery</div>
-            <h1 className="font-serif text-[clamp(2.5rem,10vw,4.5rem)] leading-none sm:text-7xl">Moments from the wild.</h1>
-          </div>
-        </div>
-      </section>
-
-      <section className="bg-[var(--color-ivory)] py-24">
-        <div className="mx-auto max-w-[1400px] px-4 sm:px-6 lg:px-8">
-          <div className="grid auto-rows-[220px] gap-5 sm:grid-cols-2 xl:grid-cols-4">
-            {galleryItems.map((item, index) => (
-              <div
-                key={item.title}
-                className={
-                  index % 3 === 0
-                    ? "relative overflow-hidden rounded-[1.8rem] sm:col-span-2"
-                    : index % 2 === 0
-                      ? "relative overflow-hidden rounded-[1.8rem] xl:row-span-2"
-                      : "relative overflow-hidden rounded-[1.8rem]"
-                }
-              >
-                <div className="relative h-full w-full">
-                  <Image src={item.image} alt={item.alt} fill sizes="(max-width: 640px) 100vw, (max-width: 1280px) 50vw, 25vw" className="object-cover" />
-                  <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(17,14,12,0.1),rgba(17,14,12,0.74))]" />
-                </div>
-                <div className="absolute inset-x-0 bottom-0 p-5 text-white">
-                  <div className="text-[0.62rem] uppercase tracking-[0.2em] text-white/70">{item.category}</div>
-                  <h3 className="mt-2 font-serif text-3xl leading-none">{item.title}</h3>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-    </main>
-  );
+  const [hero, ...rest] = galleryItems;
+  return <main><section className="bg-[var(--color-charcoal)] text-white"><div className="mx-auto max-w-[1400px] px-4 pb-20 pt-28 sm:px-6 sm:pb-28 sm:pt-36 lg:px-8"><div className="max-w-2xl"><div className="mb-5 text-[0.7rem] uppercase tracking-[0.28em] text-[var(--color-gold)]">The Ivory Atlas gallery</div><h1 className="font-serif text-[clamp(3rem,8vw,7rem)] leading-[0.86]">Moments from the wild.</h1><p className="mt-7 text-lg leading-8 text-white/70">Landscapes, encounters and quiet moments from across East Africa.</p></div></div></section><section className="bg-[var(--color-ivory)] py-20 sm:py-28"><div className="mx-auto max-w-[1400px] px-4 sm:px-6 lg:px-8"><div className="grid auto-rows-[220px] gap-4 sm:grid-cols-2 lg:grid-cols-4 lg:auto-rows-[260px]"><Link href="/gallery" className="group relative row-span-2 overflow-hidden rounded-[1.8rem] sm:col-span-2 lg:col-span-2"><Image src={hero.image} alt={hero.alt} fill sizes="(max-width: 1024px) 100vw, 50vw" className="object-cover transition duration-700 group-hover:scale-[1.03]" /><div className="absolute inset-0 bg-black/15" /><div className="absolute bottom-0 p-6 text-white"><div className="text-[0.62rem] uppercase tracking-[0.2em] text-[var(--color-gold)]">{hero.category}</div><h2 className="mt-2 font-serif text-4xl">{hero.title}</h2></div></Link>{rest.map((item, index) => <Link href="/gallery" key={item.title} className={`group relative overflow-hidden rounded-[1.8rem] ${index === 0 ? "sm:col-span-2" : ""}`}><Image src={item.image} alt={item.alt} fill sizes="(max-width: 1024px) 50vw, 25vw" className="object-cover transition duration-700 group-hover:scale-[1.04]" /><div className="absolute inset-0 bg-black/10 transition group-hover:bg-black/25" /><div className="absolute bottom-0 p-5 text-white"><div className="text-[0.6rem] uppercase tracking-[0.18em] text-white/70">{item.category}</div><h3 className="mt-1 font-serif text-2xl">{item.title}</h3></div></Link>)}</div><Link href="/plan-your-safari" className="mt-12 inline-flex items-center gap-2 text-sm font-medium text-[var(--color-charcoal)] transition hover:text-[var(--color-gold)]">Carry the feeling into your journey <ArrowRight size={16} /></Link></div></section></main>;
 }
