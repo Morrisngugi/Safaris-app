@@ -1,0 +1,67 @@
+import { Mail, MapPin, MessageCircle, Phone } from "lucide-react";
+import { contactConfig } from "@/data/site";
+
+export default function ContactPage() {
+  return (
+    <main>
+      <section className="bg-[var(--color-charcoal)] text-white">
+        <div className="mx-auto max-w-[1400px] px-4 py-28 sm:px-6 lg:px-8 lg:py-32">
+          <div className="max-w-3xl">
+            <div className="mb-4 text-[0.7rem] font-medium uppercase tracking-[0.28em] text-[var(--color-gold)]">Contact</div>
+            <h1 className="font-serif text-5xl leading-none sm:text-7xl">Let’s craft your next itinerary.</h1>
+          </div>
+        </div>
+      </section>
+
+      <section className="bg-[var(--color-ivory)] py-24">
+        <div className="mx-auto grid max-w-[1400px] gap-10 px-4 sm:px-6 lg:grid-cols-[0.9fr_1.1fr] lg:px-8">
+          <div className="space-y-6 rounded-[2rem] border border-[var(--color-border)] bg-white p-8">
+            <div>
+              <div className="mb-3 text-[0.7rem] font-medium uppercase tracking-[0.28em] text-[var(--color-gold)]">Get in touch</div>
+              <h2 className="font-serif text-4xl leading-none text-[var(--color-charcoal)]">Our team is ready to help.</h2>
+            </div>
+
+            <div className="space-y-5 text-base text-[var(--color-muted)]">
+              <div className="flex items-start gap-3"><Phone className="mt-1 text-[var(--color-gold)]" size={18} /> <span>{contactConfig.phone}</span></div>
+              <div className="flex items-start gap-3"><Mail className="mt-1 text-[var(--color-gold)]" size={18} /> <span>{contactConfig.email}</span></div>
+              <div className="flex items-start gap-3"><MapPin className="mt-1 text-[var(--color-gold)]" size={18} /> <span>{contactConfig.address}</span></div>
+              <div className="flex items-start gap-3"><MessageCircle className="mt-1 text-[var(--color-gold)]" size={18} /> <span>WhatsApp: {contactConfig.whatsapp}</span></div>
+            </div>
+          </div>
+
+          <form className="rounded-[2rem] border border-[var(--color-border)] bg-white p-8 shadow-[0_18px_52px_rgba(24,18,12,0.04)]">
+            <div className="grid gap-6 md:grid-cols-2">
+              <label className="space-y-2 text-sm text-[var(--color-muted)]">
+                <span>Full name</span>
+                <input className="w-full rounded-xl border border-[var(--color-border)] bg-[var(--color-ivory)] px-4 py-3 text-[var(--color-charcoal)] outline-none transition focus:border-[var(--color-gold)]" placeholder="Your name" />
+              </label>
+              <label className="space-y-2 text-sm text-[var(--color-muted)]">
+                <span>Email</span>
+                <input type="email" className="w-full rounded-xl border border-[var(--color-border)] bg-[var(--color-ivory)] px-4 py-3 text-[var(--color-charcoal)] outline-none transition focus:border-[var(--color-gold)]" placeholder="you@example.com" />
+              </label>
+              <label className="space-y-2 text-sm text-[var(--color-muted)]">
+                <span>Phone</span>
+                <input className="w-full rounded-xl border border-[var(--color-border)] bg-[var(--color-ivory)] px-4 py-3 text-[var(--color-charcoal)] outline-none transition focus:border-[var(--color-gold)]" placeholder="+254 ..." />
+              </label>
+              <label className="space-y-2 text-sm text-[var(--color-muted)]">
+                <span>Country</span>
+                <input className="w-full rounded-xl border border-[var(--color-border)] bg-[var(--color-ivory)] px-4 py-3 text-[var(--color-charcoal)] outline-none transition focus:border-[var(--color-gold)]" placeholder="Country" />
+              </label>
+              <label className="space-y-2 text-sm text-[var(--color-muted)] md:col-span-2">
+                <span>Destinations of interest</span>
+                <input className="w-full rounded-xl border border-[var(--color-border)] bg-[var(--color-ivory)] px-4 py-3 text-[var(--color-charcoal)] outline-none transition focus:border-[var(--color-gold)]" placeholder="Masai Mara, Zanzibar, Serengeti..." />
+              </label>
+              <label className="space-y-2 text-sm text-[var(--color-muted)] md:col-span-2">
+                <span>Message</span>
+                <textarea rows={5} className="w-full rounded-xl border border-[var(--color-border)] bg-[var(--color-ivory)] px-4 py-3 text-[var(--color-charcoal)] outline-none transition focus:border-[var(--color-gold)]" placeholder="Tell us about your ideal trip..." />
+              </label>
+            </div>
+            <button type="submit" className="mt-6 inline-flex items-center justify-center rounded-full bg-[var(--color-gold)] px-6 py-3 text-sm font-medium text-[#1d1a17] transition hover:bg-[#c89d4f]">
+              Send enquiry
+            </button>
+          </form>
+        </div>
+      </section>
+    </main>
+  );
+}
