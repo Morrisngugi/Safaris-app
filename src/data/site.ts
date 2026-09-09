@@ -14,8 +14,8 @@ export const navItems: NavItem[] = [
 export const contactConfig: ContactConfig = {
   company: "Ivory Atlas Tours & Safaris Ltd.",
   tagline: "The Wild, Reimagined.",
-  phoneDisplay: "0181457571",
-  phoneHref: "tel:0181457571",
+  phoneDisplay: "+254181457571",
+  phoneHref: "tel:254181457571",
   email: "info@ivoryatlastours.com",
   whatsappNumber: "+254181457571",
 };
