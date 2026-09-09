@@ -17,7 +17,7 @@ export const contactConfig: ContactConfig = {
   phoneDisplay: "0181457571",
   phoneHref: "tel:0181457571",
   email: "info@ivoryatlastours.com",
-  whatsappNumber: "0181457571",
+  whatsappNumber: "+254181457571",
 };
 
 export const siteDefaults = {

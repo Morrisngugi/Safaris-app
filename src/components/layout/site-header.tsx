@@ -111,6 +111,7 @@ export function SiteHeader() {
                 <Link
                   key={item.href}
                   href={item.href}
+                  onClick={() => setIsOpen(false)}
                   className={`flex min-h-11 items-center rounded-xl px-3 py-2 text-sm transition hover:text-[var(--color-gold)] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[var(--color-gold)] ${mutedTextClass}`}
                 >
                   {item.label}

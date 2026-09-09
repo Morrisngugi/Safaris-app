@@ -7,7 +7,7 @@ export const experiences: Experience[] = [
     description: "Signature game drives and expert guiding across East Africa’s most celebrated landscapes.",
     image:
       "https://images.unsplash.com/photo-1546182990-dffeafbe841d?auto=format&fit=crop&w=900&q=80",
-    destinations: ["Masai Mara", "Serengeti", "Amboseli"],
+    destinations: ["Maasai Mara", "Serengeti", "Amboseli"],
   },
   {
     slug: "luxury-safaris",
@@ -15,7 +15,7 @@ export const experiences: Experience[] = [
     description: "Elegant tented camps, private guides, and immersive moments designed for thoughtful indulgence.",
     image:
       "https://images.unsplash.com/photo-1521295121783-8a321d551ad2?auto=format&fit=crop&w=900&q=80",
-    destinations: ["Masai Mara", "Ngorongoro", "Zanzibar"],
+    destinations: ["Maasai Mara", "Ngorongoro", "Zanzibar"],
   },
   {
     slug: "honeymoons",
@@ -31,7 +31,7 @@ export const experiences: Experience[] = [
     description: "Carefully paced journeys with age-appropriate adventures, comfort, and flexible itineraries.",
     image:
       "https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=900&q=80",
-    destinations: ["Ngorongoro", "Masai Mara", "Samburu"],
+    destinations: ["Ngorongoro", "Maasai Mara", "Samburu"],
   },
   {
     slug: "beach-holidays",
