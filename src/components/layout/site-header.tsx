@@ -40,8 +40,8 @@ export function SiteHeader() {
     <header className={`fixed inset-x-0 top-0 z-50 transition-all duration-300 ${headerClasses}`}>
       <div className="mx-auto max-w-[1400px] px-4 sm:px-6 lg:px-8">
         <div className="flex h-20 items-center justify-between gap-6">
-          <Link href="/" onClick={() => setIsOpen(false)} className="flex items-center gap-3" aria-label="Ivory Atlas home">
-            <div className="relative h-12 w-12 overflow-hidden rounded-full border border-white/20 bg-white/10 backdrop-blur-sm">
+          <Link href="/" onClick={() => setIsOpen(false)} className="flex min-w-0 items-center gap-3" aria-label="Ivory Atlas home">
+            <div className="relative h-12 w-12 shrink-0 overflow-hidden rounded-full border border-white/20 bg-white/10 backdrop-blur-sm">
               <Image
                 src="/brand/logo.jpg"
                 alt="Ivory Atlas logo"
@@ -50,9 +50,12 @@ export function SiteHeader() {
                 className="object-cover"
               />
             </div>
-            <div className="leading-none">
+            <div className="min-w-0 leading-none">
               <div className="font-serif text-[1.1rem] tracking-[0.2em] text-[var(--color-gold)]">IVORY ATLAS</div>
               <div className={`mt-1 text-[0.58rem] uppercase tracking-[0.32em] ${mutedTextClass}`}>Tours & Safaris</div>
+              <div className="mt-1 text-[0.44rem] font-medium uppercase tracking-[0.28em] text-[var(--color-gold)] sm:text-[0.52rem]">
+                THE WILD, REIMAGINED.
+              </div>
             </div>
           </Link>
 
