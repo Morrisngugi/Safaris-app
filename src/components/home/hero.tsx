@@ -4,29 +4,27 @@ import Link from "next/link";
 import Image from "next/image";
 import { ArrowRight } from "lucide-react";
 import { useEffect, useState } from "react";
+import { destinations } from "@/data/destinations";
 
-const scenes = [
-  {
-    location: "MAASAI MARA · KENYA",
-    image: "https://images.unsplash.com/photo-1546182990-dffeafbe841d?auto=format&fit=crop&w=2000&q=85",
-    alt: "Golden plains of the Maasai Mara at dawn",
-  },
-  {
-    location: "AMBOSELI · KENYA",
-    image: "https://images.unsplash.com/photo-1516426122078-c23e76319801?auto=format&fit=crop&w=2000&q=85",
-    alt: "Elephants moving across an East African plain",
-  },
-  {
-    location: "SAMBURU · KENYA",
-    image: "https://images.unsplash.com/photo-1474511320723-9a56873867b5?auto=format&fit=crop&w=2000&q=85",
-    alt: "Wildlife in the dry northern landscapes of Samburu",
-  },
-  {
-    location: "DIANI · KENYA",
-    image: "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=2000&q=85",
-    alt: "Turquoise water along the Kenyan coast at Diani",
-  },
-];
+const heroSequence = ["maasai-mara", "amboseli", "samburu", "ol-pejeta", "diani"] as const;
+
+const scenes = heroSequence.map((slug) => {
+  const destination = destinations.find((item) => item.slug === slug)!;
+  const objectPositionMap: Record<string, string> = {
+    "maasai-mara": "center center",
+    amboseli: "center 42%",
+    samburu: "center center",
+    "ol-pejeta": "center 58%",
+    diani: "center 62%",
+  };
+
+  return {
+    location: `${destination.name.toUpperCase()} · KENYA`,
+    image: destination.heroImage ?? destination.image,
+    alt: destination.description,
+    objectPosition: objectPositionMap[slug] ?? "center center",
+  };
+});
 
 export function Hero() {
   const [activeScene, setActiveScene] = useState(0);
@@ -54,6 +52,7 @@ export function Hero() {
             fill
             priority={index === 0}
             sizes="100vw"
+            style={{ objectPosition: item.objectPosition }}
             className={`object-cover transition-[opacity,transform] duration-[1600ms] motion-reduce:transition-none ${index === activeScene ? "scale-[1.03] opacity-70" : "scale-100 opacity-0"}`}
           />
         ))}

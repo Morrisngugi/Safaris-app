@@ -10,6 +10,9 @@ export type Destination = {
   summary: string;
   description: string;
   image: string;
+  heroImage?: string;
+  cardImage?: string;
+  galleryImages?: string[];
   accents: string[];
   bestTime: string;
   highlights: string[];

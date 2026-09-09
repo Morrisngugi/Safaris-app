@@ -27,7 +27,7 @@ export function DestinationsPreview() {
               className="group relative overflow-hidden rounded-[2rem] border border-[var(--color-border)] bg-white"
             >
               <div className="relative h-[500px]">
-                <Image src={destination.image} alt={destination.name} fill sizes="(max-width: 768px) 100vw, (max-width: 1280px) 50vw, 25vw" className="object-cover transition duration-500 group-hover:scale-105" />
+                <Image src={destination.cardImage ?? destination.image} alt={destination.name} fill sizes="(max-width: 768px) 100vw, (max-width: 1280px) 50vw, 25vw" className="object-cover transition duration-500 group-hover:scale-105" />
                 <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(15,12,9,0.18),rgba(15,12,9,0.72))] transition duration-500 group-hover:bg-[linear-gradient(180deg,rgba(15,12,9,0.28),rgba(15,12,9,0.84))]" />
               </div>
               <div className="absolute inset-x-0 bottom-0 p-6 text-white transition-transform duration-500 group-hover:-translate-y-2">
