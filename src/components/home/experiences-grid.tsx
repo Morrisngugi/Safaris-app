@@ -18,7 +18,7 @@ export function ExperiencesGrid() {
             <div className="mb-4 text-[0.7rem] font-medium uppercase tracking-[0.28em] text-[var(--color-gold)]">Travel your way</div>
             <h2 className="max-w-xl font-serif text-5xl leading-[0.92] text-white sm:text-7xl">Not just where you go. How you experience it.</h2>
           </div>
-          <p className="max-w-md text-base leading-7 text-white/65 lg:pb-2">Choose the rhythm, texture, and feeling that should shape your time in East Africa.</p>
+          <p className="max-w-md text-base leading-7 text-white/65 lg:pb-2">Choose the rhythm, texture, and feeling that should shape your time in Kenya.</p>
         </div>
 
         <div className="mt-12 grid gap-8 lg:grid-cols-[1.15fr_0.85fr]">

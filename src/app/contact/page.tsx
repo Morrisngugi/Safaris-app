@@ -48,7 +48,7 @@ export default function ContactPage() {
               </label>
               <label className="space-y-2 text-sm text-[var(--color-muted)] md:col-span-2">
                 <span>Destinations of interest</span>
-                <input type="text" className="min-h-11 w-full rounded-xl border border-[var(--color-border)] bg-[var(--color-ivory)] px-4 py-3 text-[var(--color-charcoal)] outline-none transition focus:border-[var(--color-gold)]" placeholder="Maasai Mara, Zanzibar, Serengeti..." />
+                <input type="text" className="min-h-11 w-full rounded-xl border border-[var(--color-border)] bg-[var(--color-ivory)] px-4 py-3 text-[var(--color-charcoal)] outline-none transition focus:border-[var(--color-gold)]" placeholder="Maasai Mara, Amboseli, Diani..." />
               </label>
               <label className="space-y-2 text-sm text-[var(--color-muted)] md:col-span-2">
                 <span>Message</span>

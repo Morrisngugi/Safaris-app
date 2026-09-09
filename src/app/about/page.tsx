@@ -4,7 +4,7 @@ import { ArrowRight } from "lucide-react";
 
 const philosophy = [
   ["Thoughtful planning", "Every journey is shaped with clarity, rhythm and intention so each day feels rewarding rather than rushed."],
-  ["Local expertise", "Our approach is informed by an understanding of the destinations, seasons and experiences that define East Africa."],
+  ["Local expertise", "Our approach is informed by an understanding of the destinations, seasons and experiences that define Kenya."],
   ["Responsible travel", "Meaningful travel should respect the landscapes, wildlife and communities that make each journey possible."],
   ["Elegant comfort", "Luxury is not excess. It is thoughtful service, beautiful stays, seamless logistics and space to enjoy the journey."],
 ];
@@ -18,7 +18,7 @@ const values = [
 
 const difference = [
   ["Personal by design", "Every itinerary begins with the traveller, not a template. The pace, places and experiences should reflect how they want to experience Africa."],
-  ["Rooted in East Africa", "Journeys are shaped by an understanding of the destinations, seasons and experiences that make the region extraordinary."],
+  ["Rooted in Kenya", "Journeys are shaped by an understanding of the destinations, seasons and experiences that make Kenya extraordinary."],
   ["Considered from start to finish", "From the rhythm of an itinerary to accommodation and logistics, every element should work together naturally."],
   ["Personal communication", "Travel planning should feel reassuring and uncomplicated, with clear communication throughout the journey-planning process."],
 ];
@@ -31,12 +31,12 @@ export default function AboutPage() {
           <div className="relative z-10 lg:-mr-28 lg:pb-10">
             <div className="mb-5 text-[0.7rem] font-medium uppercase tracking-[0.28em] text-[var(--color-gold)]">About Ivory Atlas</div>
             <h1 className="max-w-3xl font-serif text-[clamp(3rem,8vw,7.5rem)] leading-[0.86]">Africa is more than a destination. It&apos;s a story you step into.</h1>
-            <p className="mt-7 max-w-xl text-base leading-7 text-white/70 sm:text-lg">We create thoughtful journeys through East Africa, shaped around remarkable places, meaningful encounters and the freedom to experience them at your own pace.</p>
+            <p className="mt-7 max-w-xl text-base leading-7 text-white/70 sm:text-lg">We create thoughtful journeys through Kenya, shaped around remarkable places, meaningful encounters and the freedom to experience them at your own pace.</p>
           </div>
           <div className="relative min-h-[380px] overflow-hidden rounded-[2rem] border border-white/10 sm:min-h-[560px]">
             <Image src="https://images.unsplash.com/photo-1546182990-dffeafbe841d?auto=format&fit=crop&w=1600&q=85" alt="African wildlife moving across open plains" fill sizes="(max-width: 1024px) 100vw, 65vw" priority loading="eager" className="object-cover transition duration-1000 hover:scale-[1.03]" />
             <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(15,12,9,0.02),rgba(15,12,9,0.42))]" />
-            <div className="absolute bottom-5 left-5 flex items-center gap-3 text-[0.65rem] uppercase tracking-[0.22em] text-white/75 sm:bottom-7 sm:left-7"><span className="h-px w-10 bg-[var(--color-gold)]" /> East Africa, thoughtfully experienced</div>
+            <div className="absolute bottom-5 left-5 flex items-center gap-3 text-[0.65rem] uppercase tracking-[0.22em] text-white/75 sm:bottom-7 sm:left-7"><span className="h-px w-10 bg-[var(--color-gold)]" /> Kenya, thoughtfully experienced</div>
           </div>
         </div>
       </section>
@@ -77,7 +77,7 @@ export default function AboutPage() {
 
       <section className="relative isolate overflow-hidden bg-[var(--color-charcoal)]">
         <div className="relative min-h-[520px] sm:min-h-[640px]">
-          <Image src="https://images.unsplash.com/photo-1549366021-9f761d450615?auto=format&fit=crop&w=1800&q=85" alt="Expansive Serengeti landscape under a wide sky" fill sizes="100vw" className="object-cover" />
+          <Image src="https://images.unsplash.com/photo-1546182990-dffeafbe841d?auto=format&fit=crop&w=1800&q=85" alt="Expansive Kenyan savannah under a wide sky" fill sizes="100vw" className="object-cover" />
           <div className="absolute inset-0 bg-[linear-gradient(90deg,rgba(16,15,13,0.75),rgba(16,15,13,0.18),rgba(16,15,13,0.42))]" />
           <div className="absolute inset-x-0 bottom-0 mx-auto max-w-[1400px] px-4 pb-12 sm:px-6 sm:pb-16 lg:px-8">
             <div className="max-w-xl text-white"><div className="text-[0.7rem] font-medium uppercase tracking-[0.28em] text-[var(--color-gold)]">The wild, reimagined.</div><p className="mt-5 font-serif text-4xl leading-none sm:text-6xl">Travel deeper. Stay longer. Remember more.</p></div>
@@ -94,7 +94,7 @@ export default function AboutPage() {
 
       <section className="bg-[var(--color-charcoal)] py-24 text-white sm:py-32">
         <div className="mx-auto grid max-w-[1400px] gap-12 px-4 sm:px-6 lg:grid-cols-[0.75fr_1.25fr] lg:px-8">
-          <div><div className="mb-5 text-[0.7rem] font-medium uppercase tracking-[0.28em] text-[var(--color-gold)]">The Ivory Atlas difference</div><h2 className="font-serif text-5xl leading-[0.92] sm:text-7xl">Designed around you. Grounded in Africa.</h2><div className="relative mt-10 hidden min-h-[280px] overflow-hidden rounded-[1.5rem] lg:block"><Image src="https://images.unsplash.com/photo-1521295121783-8a321d551ad2?auto=format&fit=crop&w=1000&q=85" alt="A refined safari camp in East Africa" fill sizes="30vw" className="object-cover" /></div></div>
+          <div><div className="mb-5 text-[0.7rem] font-medium uppercase tracking-[0.28em] text-[var(--color-gold)]">The Ivory Atlas difference</div><h2 className="font-serif text-5xl leading-[0.92] sm:text-7xl">Designed around you. Grounded in Africa.</h2><div className="relative mt-10 hidden min-h-[280px] overflow-hidden rounded-[1.5rem] lg:block"><Image src="https://images.unsplash.com/photo-1521295121783-8a321d551ad2?auto=format&fit=crop&w=1000&q=85" alt="A refined safari camp in Kenya" fill sizes="30vw" className="object-cover" /></div></div>
           <div className="divide-y divide-white/15 border-y border-white/15">{difference.map(([title, text]) => <div key={title} className="py-7 sm:py-9"><h3 className="font-serif text-3xl text-white sm:text-4xl">{title}</h3><p className="mt-3 max-w-xl text-base leading-7 text-white/65">{text}</p></div>)}</div>
         </div>
       </section>

@@ -15,7 +15,7 @@ export const contactConfig: ContactConfig = {
   company: "Ivory Atlas Tours & Safaris Ltd.",
   tagline: "The Wild, Reimagined.",
   phoneDisplay: "+254181457571",
-  phoneHref: "tel:254181457571",
+  phoneHref: "tel:+254181457571",
   email: "info@ivoryatlastours.com",
   whatsappNumber: "+254181457571",
 };
@@ -23,5 +23,5 @@ export const contactConfig: ContactConfig = {
 export const siteDefaults = {
   title: "Ivory Atlas Tours & Safaris Ltd.",
   description:
-    "Ivory Atlas creates premium safari and African travel experiences across East Africa with thoughtful itineraries and unforgettable journeys.",
+    "Ivory Atlas creates premium safari and African travel experiences across Kenya with thoughtful itineraries and unforgettable journeys.",
 };

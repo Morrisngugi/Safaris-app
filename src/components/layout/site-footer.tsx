@@ -16,10 +16,11 @@ export function SiteFooter() {
               <div>
                 <div className="font-serif text-xl tracking-[0.18em] text-[var(--color-gold)]">IVORY ATLAS</div>
                 <div className="text-[0.66rem] uppercase tracking-[0.24em] text-white/70">Tours & Safaris</div>
+                <div className="mt-2 text-[0.62rem] uppercase tracking-[0.22em] text-white/55">THE WILD, REIMAGINED.</div>
               </div>
             </div>
             <p className="mt-6 max-w-md text-sm leading-7 text-white/70">
-              Thoughtful safari journeys across East Africa, shaped by local knowledge, refined service, and a love for the wild.
+              Thoughtful safari journeys across Kenya, shaped by local knowledge, refined service, and a love for the wild.
             </p>
           </div>
 
@@ -39,7 +40,7 @@ export function SiteFooter() {
           <div>
             <h3 className="mb-5 text-sm font-semibold uppercase tracking-[0.2em] text-[var(--color-gold)]">Destinations</h3>
             <ul className="space-y-3 text-sm text-white/75">
-              {['Maasai Mara', 'Amboseli', 'Serengeti', 'Zanzibar', 'Samburu'].map((place) => (
+              {['Maasai Mara', 'Amboseli', 'Samburu', 'Ol Pejeta', 'Diani'].map((place) => (
                 <li key={place}>{place}</li>
               ))}
             </ul>

@@ -14,7 +14,7 @@ export const testimonials: Testimonial[] = [
       "Ivory Atlas created a journey that balanced wildlife with genuine comfort and thoughtful service. We arrived feeling taken care of and left with stories we still tell often.",
     name: "Daniel & Claire",
     title: "Honeymoon Travelers",
-    destination: "Zanzibar & Serengeti",
+    destination: "Maasai Mara & Diani",
   },
   {
     quote:

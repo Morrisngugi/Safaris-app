@@ -17,18 +17,18 @@ const cormorant = Cormorant_Garamond({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://example.com"),
+  metadataBase: new URL("https://ivoryatlastours.com"),
   title: {
     default: "Ivory Atlas Tours & Safaris Ltd.",
     template: "%s | Ivory Atlas",
   },
   description:
-    "Ivory Atlas creates premium safari and travel experiences across East Africa with thoughtful itineraries and unforgettable journeys.",
+    "Ivory Atlas creates premium safari and travel experiences across Kenya with thoughtful itineraries and unforgettable journeys.",
   openGraph: {
     title: "Ivory Atlas Tours & Safaris Ltd.",
     description:
-      "The Wild, Reimagined. Premium African safaris, luxury travel, and thoughtfully curated East African experiences.",
-    url: "https://example.com",
+      "The Wild, Reimagined. Premium Kenyan safaris, luxury travel, and thoughtfully curated journeys.",
+    url: "https://ivoryatlastours.com",
     siteName: "Ivory Atlas",
     type: "website",
   },
@@ -36,7 +36,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Ivory Atlas Tours & Safaris Ltd.",
     description:
-      "The Wild, Reimagined. Thoughtful African travel and premium safari experiences.",
+      "The Wild, Reimagined. Thoughtful Kenyan travel and premium safari experiences.",
   },
 };
 

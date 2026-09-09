@@ -4,7 +4,7 @@ import { safaris } from "@/data/safaris";
 import { journalArticles } from "@/data/journal";
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const baseUrl = "https://example.com";
+  const baseUrl = "https://ivoryatlastours.com";
   const routes = [
     "",
     "/about",

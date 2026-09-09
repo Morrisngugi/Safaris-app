@@ -17,14 +17,14 @@ const scenes = [
     alt: "Elephants moving across an East African plain",
   },
   {
-    location: "SERENGETI · TANZANIA",
-    image: "https://images.unsplash.com/photo-1549366021-9f761d450615?auto=format&fit=crop&w=2000&q=85",
-    alt: "Wildlife and open landscape in the Serengeti",
+    location: "SAMBURU · KENYA",
+    image: "https://images.unsplash.com/photo-1474511320723-9a56873867b5?auto=format&fit=crop&w=2000&q=85",
+    alt: "Wildlife in the dry northern landscapes of Samburu",
   },
   {
-    location: "ZANZIBAR · INDIAN OCEAN",
+    location: "DIANI · KENYA",
     image: "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=2000&q=85",
-    alt: "Turquoise water along the Zanzibar coast",
+    alt: "Turquoise water along the Kenyan coast at Diani",
   },
 ];
 
@@ -73,7 +73,7 @@ export function Hero() {
           </h1>
 
           <p className="mt-6 max-w-xl text-lg leading-8 text-white/75 sm:text-xl">
-            Discover extraordinary safaris, remarkable landscapes and deeply personal travel experiences across East Africa.
+            Discover extraordinary safaris, remarkable landscapes and deeply personal travel experiences across Kenya.
           </p>
 
           <div className="mt-10 flex flex-col gap-4 sm:flex-row sm:items-center">

@@ -32,17 +32,17 @@ export const galleryItems: GalleryItem[] = [
     category: "Landscape",
   },
   {
-    title: "Coastal elegance",
+    title: "Diani coast light",
     image:
       "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1200&q=80",
-    alt: "Beach in Zanzibar with turquoise water",
+    alt: "White-sand beach and turquoise water on the Kenyan coast at Diani",
     category: "Beach",
   },
   {
     title: "Untamed beauty",
     image:
       "https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=1200&q=80",
-    alt: "Landscape and wildlife in Tanzania",
+    alt: "Landscape and wildlife in Kenya",
     category: "Landscape",
   },
   {

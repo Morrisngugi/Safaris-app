@@ -24,12 +24,12 @@ export function BrandIntro() {
             Africa, Beyond the Ordinary.
           </h2>
           <p className="mt-6 max-w-xl text-lg leading-8 text-[var(--color-muted)]">
-            Ivory Atlas creates personalized African journeys that combine wildlife, landscape, culture, and beautifully paced luxury. Every itinerary is shaped around how you travel, what you value, and the kind of memories you want to return with.
+            Ivory Atlas creates personalized Kenyan journeys that combine wildlife, landscape, culture, and beautifully paced luxury. Every itinerary is shaped around how you travel, what you value, and the kind of memories you want to return with.
           </p>
           <p className="mt-4 max-w-xl text-base leading-7 text-[var(--color-muted)]">
             From first impressions to final departures, we design journeys that feel considered, immersive, and deeply personal — never rushed, never generic.
           </p>
-          <div className="mt-6 text-[0.68rem] uppercase tracking-[0.18em] text-[var(--color-gold)]">Bespoke itineraries · East African expertise · Personal service</div>
+          <div className="mt-6 text-[0.68rem] uppercase tracking-[0.18em] text-[var(--color-gold)]">Bespoke itineraries · Kenyan expertise · Personal service</div>
           <Link href="/about" className="mt-8 inline-flex w-fit items-center gap-2 rounded-full border border-[var(--color-charcoal)] px-6 py-3 text-sm font-medium text-[var(--color-charcoal)] transition hover:bg-[var(--color-charcoal)] hover:text-white">
             Discover Ivory Atlas <ArrowRight size={16} />
           </Link>
