@@ -74,6 +74,13 @@ export type JournalArticle = {
   body: string[];
 };
 
+export type Collaborator = {
+  name: string;
+  logo: string;
+  website?: string;
+  alt?: string;
+};
+
 export type ContactConfig = {
   company: string;
   tagline: string;

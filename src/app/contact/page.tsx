@@ -1,4 +1,4 @@
-import { Mail, Phone } from "lucide-react";
+import { Mail, MapPin, Phone } from "lucide-react";
 import { contactConfig } from "@/data/site";
 
 export default function ContactPage() {
@@ -25,6 +25,7 @@ export default function ContactPage() {
             <div className="space-y-5 text-base text-[var(--color-muted)]">
               <div className="flex items-start gap-3"><Phone className="mt-1 text-[var(--color-gold)]" size={18} /> <a href={contactConfig.phoneHref} className="transition hover:text-[var(--color-gold)]">{contactConfig.phoneDisplay}</a></div>
               <div className="flex items-start gap-3"><Mail className="mt-1 text-[var(--color-gold)]" size={18} /> <a href={`mailto:${contactConfig.email}`} className="transition hover:text-[var(--color-gold)]">{contactConfig.email}</a></div>
+              <div className="flex items-start gap-3"><MapPin className="mt-1 text-[var(--color-gold)]" size={18} /> <span>{contactConfig.address}</span></div>
             </div>
           </div>
 
