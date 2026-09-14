@@ -1,5 +1,15 @@
+import type { Metadata } from "next";
 import { Mail, MapPin, Phone } from "lucide-react";
 import { contactConfig } from "@/data/site";
+import { pageMetadata } from "@/lib/seo";
+
+export const metadata: Metadata = pageMetadata({
+  title: "Contact Ivory Atlas Tours & Safaris",
+  description:
+    "Contact Ivory Atlas to plan a bespoke Kenya safari, discuss your ideal itinerary, and explore destinations including Maasai Mara, Amboseli, Samburu and Diani.",
+  path: "/contact",
+  image: "/brand/logo.jpg",
+});
 
 export default function ContactPage() {
   return (

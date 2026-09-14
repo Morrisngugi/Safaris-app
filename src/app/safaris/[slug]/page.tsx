@@ -1,12 +1,38 @@
+import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import { ArrowRight, Check, CircleDashed } from "lucide-react";
 import { notFound } from "next/navigation";
 import { safaris } from "@/data/safaris";
 import { PageCta } from "@/components/ui/page-cta";
+import { breadcrumbJsonLd, pageMetadata } from "@/lib/seo";
 
 export function generateStaticParams() {
   return safaris.map((safari) => ({ slug: safari.slug }));
+}
+
+export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }): Promise<Metadata> {
+  const { slug } = await params;
+  const safari = safaris.find((item) => item.slug === slug);
+
+  if (!safari) {
+    return pageMetadata({
+      title: "Safari Package | Ivory Atlas Tours & Safaris",
+      description: "Explore handcrafted safari journeys across Kenya with Ivory Atlas.",
+      path: "/safaris",
+      image: "/brand/logo.jpg",
+    });
+  }
+
+  const title = `${safari.name} | ${safari.destination} Safari | Ivory Atlas`;
+  const description = `${safari.summary} Discover ${safari.destination} and a ${safari.duration} itinerary designed around wildlife, comfort and meaningful travel.`;
+
+  return pageMetadata({
+    title,
+    description,
+    path: `/safaris/${safari.slug}`,
+    image: safari.image,
+  });
 }
 
 export default async function SafariDetailPage({ params }: { params: Promise<{ slug: string }> }) {
@@ -18,9 +44,15 @@ export default async function SafariDetailPage({ params }: { params: Promise<{ s
   }
 
   const relatedSafaris = safaris.filter((item) => item.slug !== safari.slug).slice(0, 3);
+  const breadcrumb = breadcrumbJsonLd([
+    { name: "Home", url: "https://ivoryatlastours.com/" },
+    { name: "Safaris", url: "https://ivoryatlastours.com/safaris" },
+    { name: safari.name, url: `https://ivoryatlastours.com/safaris/${safari.slug}` },
+  ]);
 
   return (
     <main className="bg-[var(--color-ivory)] text-[var(--color-charcoal)]">
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumb) }} />
       <section className="relative overflow-hidden bg-[var(--color-charcoal)] text-white">
         <div className="relative h-[620px]">
           <Image src={safari.image} alt={safari.name} fill sizes="100vw" priority loading="eager" className="object-cover opacity-80" />

@@ -1,12 +1,36 @@
+import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import { ArrowLeft } from "lucide-react";
 import { notFound } from "next/navigation";
 import { journalArticles } from "@/data/journal";
 import { PageCta } from "@/components/ui/page-cta";
+import { articleJsonLd, breadcrumbJsonLd, pageMetadata } from "@/lib/seo";
 
 export function generateStaticParams() {
   return journalArticles.map((article) => ({ slug: article.slug }));
+}
+
+export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }): Promise<Metadata> {
+  const { slug } = await params;
+  const article = journalArticles.find((item) => item.slug === slug);
+
+  if (!article) {
+    return pageMetadata({
+      title: "Journal Article | Ivory Atlas Tours & Safaris",
+      description: "Read travel inspiration and practical safari guidance from Ivory Atlas.",
+      path: "/journal",
+      image: "/brand/logo.jpg",
+    });
+  }
+
+  return pageMetadata({
+    title: `${article.title} | Ivory Atlas`,
+    description: article.excerpt,
+    path: `/journal/${article.slug}`,
+    image: article.image,
+    type: "article",
+  });
 }
 
 export default async function JournalDetailPage({ params }: { params: Promise<{ slug: string }> }) {
@@ -17,8 +41,16 @@ export default async function JournalDetailPage({ params }: { params: Promise<{ 
     notFound();
   }
 
+  const breadcrumb = breadcrumbJsonLd([
+    { name: "Home", url: "https://ivoryatlastours.com/" },
+    { name: "Journal", url: "https://ivoryatlastours.com/journal" },
+    { name: article.title, url: `https://ivoryatlastours.com/journal/${article.slug}` },
+  ]);
+
   return (
     <main className="bg-[var(--color-ivory)] text-[var(--color-charcoal)]">
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(articleJsonLd({ title: article.title, description: article.excerpt, image: article.image, url: `https://ivoryatlastours.com/journal/${article.slug}` })) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumb) }} />
       <section className="bg-[var(--color-charcoal)] text-white">
         <div className="mx-auto max-w-[1200px] px-4 py-28 sm:px-6 lg:px-8 lg:py-32">
           <Link href="/journal" className="mb-6 inline-flex items-center gap-2 text-sm text-white/70 transition hover:text-white">

@@ -1,8 +1,18 @@
+import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 import { destinations } from "@/data/destinations";
 import { PageCta } from "@/components/ui/page-cta";
+import { pageMetadata } from "@/lib/seo";
+
+export const metadata: Metadata = pageMetadata({
+  title: "Kenya Destinations | Ivory Atlas Tours & Safaris",
+  description:
+    "Explore Kenya's most captivating safari destinations, from Maasai Mara and Amboseli to Samburu, Ol Pejeta, Lake Nakuru, Lake Naivasha, Tsavo and Diani.",
+  path: "/destinations",
+  image: "/images/destinations/maasai-mara/maasai-mara-hero.jpg",
+});
 
 export default function DestinationsPage() {
   const [featured, ...supporting] = destinations;

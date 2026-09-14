@@ -1,3 +1,4 @@
+import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
@@ -5,9 +6,34 @@ import { notFound } from "next/navigation";
 import { destinations } from "@/data/destinations";
 import { safaris } from "@/data/safaris";
 import { PageCta } from "@/components/ui/page-cta";
+import { breadcrumbJsonLd, pageMetadata } from "@/lib/seo";
 
 export function generateStaticParams() {
   return destinations.map((destination) => ({ slug: destination.slug }));
+}
+
+export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }): Promise<Metadata> {
+  const { slug } = await params;
+  const destination = destinations.find((item) => item.slug === slug);
+
+  if (!destination) {
+    return pageMetadata({
+      title: "Destination | Ivory Atlas Tours & Safaris",
+      description: "Explore unforgettable safari destinations in Kenya with Ivory Atlas.",
+      path: "/destinations",
+      image: "/brand/logo.jpg",
+    });
+  }
+
+  const title = `${destination.name} Safari & Tours in Kenya | Ivory Atlas`;
+  const description = `${destination.summary} Discover ${destination.name} with Ivory Atlas and plan a memorable Kenya safari around the landscapes, wildlife and travel style you want.`;
+
+  return pageMetadata({
+    title,
+    description,
+    path: `/destinations/${destination.slug}`,
+    image: destination.heroImage ?? destination.image,
+  });
 }
 
 export default async function DestinationDetailPage({ params }: { params: Promise<{ slug: string }> }) {
@@ -16,9 +42,15 @@ export default async function DestinationDetailPage({ params }: { params: Promis
   if (!destination) notFound();
   const relatedSafaris = safaris.filter((trip) => destination.safariSlugs.includes(trip.slug));
   const experiences = [...destination.highlights, ...destination.experiences].slice(0, 6);
+  const breadcrumb = breadcrumbJsonLd([
+    { name: "Home", url: "https://ivoryatlastours.com/" },
+    { name: "Destinations", url: "https://ivoryatlastours.com/destinations" },
+    { name: destination.name, url: `https://ivoryatlastours.com/destinations/${destination.slug}` },
+  ]);
 
   return (
     <main className="bg-[var(--color-ivory)] text-[var(--color-charcoal)]">
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumb) }} />
       <section className="relative isolate min-h-[650px] overflow-hidden bg-[var(--color-charcoal)] text-white sm:min-h-[760px]">
         <Image src={destination.heroImage ?? destination.image} alt={destination.name} fill sizes="100vw" priority className="object-cover" />
         <div className="absolute inset-0 bg-[linear-gradient(90deg,rgba(16,15,13,0.82),rgba(16,15,13,0.3),rgba(16,15,13,0.52))]" />

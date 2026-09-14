@@ -1,7 +1,17 @@
+import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 import { galleryItems } from "@/data/gallery";
+import { pageMetadata } from "@/lib/seo";
+
+export const metadata: Metadata = pageMetadata({
+  title: "Ivory Atlas Gallery | Kenya Safari Moments",
+  description:
+    "Browse a selection of memorable moments from Kenya's landscapes, wildlife and safari experiences with Ivory Atlas.",
+  path: "/gallery",
+  image: "https://images.unsplash.com/photo-1546182990-dffeafbe841d?auto=format&fit=crop&w=1800&q=80",
+});
 
 export default function GalleryPage() {
   const [hero, ...rest] = galleryItems;

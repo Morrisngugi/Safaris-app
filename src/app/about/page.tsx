@@ -1,6 +1,16 @@
+import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
+import { pageMetadata } from "@/lib/seo";
+
+export const metadata: Metadata = pageMetadata({
+  title: "About Ivory Atlas Tours & Safaris",
+  description:
+    "Learn about Ivory Atlas Tours & Safaris and the thoughtful approach behind our Kenya safari journeys, local expertise and destination-led planning.",
+  path: "/about",
+  image: "/brand/logo.jpg",
+});
 
 const philosophy = [
   ["Thoughtful planning", "Every journey is shaped with clarity, rhythm and intention so each day feels rewarding rather than rushed."],

@@ -15,6 +15,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "/contact",
     "/safaris",
     "/plan-your-safari",
+    "/privacy-policy",
+    "/terms",
   ];
 
   const staticUrls = routes.map((route) => ({

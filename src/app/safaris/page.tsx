@@ -1,8 +1,18 @@
+import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 import { safaris } from "@/data/safaris";
 import { PageCta } from "@/components/ui/page-cta";
+import { pageMetadata } from "@/lib/seo";
+
+export const metadata: Metadata = pageMetadata({
+  title: "Kenya Safari Packages | Ivory Atlas Tours & Safaris",
+  description:
+    "Browse handcrafted Kenya safari packages designed around wildlife, culture, and beautifully paced travel across Maasai Mara, Amboseli, Samburu and more.",
+  path: "/safaris",
+  image: "https://images.unsplash.com/photo-1546182990-dffeafbe841d?auto=format&fit=crop&w=1800&q=80",
+});
 
 export default function SafarisPage() {
   return (

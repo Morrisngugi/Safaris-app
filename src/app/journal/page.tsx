@@ -1,7 +1,17 @@
+import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 import { journalArticles } from "@/data/journal";
 import { PageCta } from "@/components/ui/page-cta";
+import { pageMetadata } from "@/lib/seo";
+
+export const metadata: Metadata = pageMetadata({
+  title: "Safari Journal | Ivory Atlas Tours & Safaris",
+  description:
+    "Read practical Kenya safari insights, seasonal travel advice and destination guides from Ivory Atlas to help plan a more considered African journey.",
+  path: "/journal",
+  image: "https://images.unsplash.com/photo-1546182990-dffeafbe841d?auto=format&fit=crop&w=1800&q=80",
+});
 
 export default function JournalPage() { const [featured, ...rest] = journalArticles; return <main><section className="bg-[var(--color-charcoal)] text-white"><div className="mx-auto max-w-[1400px] px-4 pb-20 pt-28 sm:px-6 sm:pb-28 sm:pt-36 lg:px-8"><div className="max-w-3xl"><div className="mb-5 text-[0.7rem] uppercase tracking-[0.28em] text-[var(--color-gold)]">Field notes</div><h1 className="font-serif text-[clamp(3rem,8vw,7rem)] leading-[0.86]">Stories, guides & inspiration from Africa.</h1></div></div></section><section className="bg-[var(--color-ivory)] py-24 sm:py-32"><div className="mx-auto max-w-[1200px] px-4 sm:px-6 lg:px-8"><Link href={`/journal/${featured.slug}`} className="group grid gap-8 border-b border-[var(--color-border)] pb-14 lg:grid-cols-[1.2fr_0.8fr] lg:items-end"><div className="relative min-h-[400px] overflow-hidden rounded-[1.8rem] sm:min-h-[560px]"><Image src={featured.image} alt={featured.title} fill sizes="(max-width: 1024px) 100vw, 60vw" priority className="object-cover transition duration-700 group-hover:scale-[1.03]" /></div><div className="pb-3"><div className="text-[0.65rem] uppercase tracking-[0.2em] text-[var(--color-gold)]">{featured.category} · {featured.readTime}</div><h2 className="mt-4 font-serif text-5xl leading-[0.9] text-[var(--color-charcoal)] sm:text-7xl">{featured.title}</h2><p className="mt-5 text-lg leading-8 text-[var(--color-muted)]">{featured.excerpt}</p><span className="mt-6 inline-flex items-center gap-2 text-sm font-medium">Read the field note <ArrowRight size={16} /></span></div></Link><div className="mt-16 divide-y divide-[var(--color-border)]">{rest.map((article) => <Link key={article.slug} href={`/journal/${article.slug}`} className="group grid gap-5 py-8 sm:grid-cols-[220px_1fr] sm:items-center"><div className="relative h-48 overflow-hidden rounded-[1.2rem]"><Image src={article.image} alt={article.title} fill sizes="220px" className="object-cover transition duration-700 group-hover:scale-[1.03]" /></div><div><div className="text-[0.62rem] uppercase tracking-[0.2em] text-[var(--color-gold)]">{article.category} · {article.readTime}</div><h3 className="mt-2 font-serif text-4xl leading-none text-[var(--color-charcoal)]">{article.title}</h3><p className="mt-3 max-w-2xl text-sm leading-7 text-[var(--color-muted)]">{article.excerpt}</p></div></Link>)}</div></div></section><PageCta eyebrow="Inspired to start planning?" title="Turn the idea into a journey." description="Bring the feeling from the field notes into a trip shaped around you." image={featured.image} /></main>; }
